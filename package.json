@@ -1,0 +1,24 @@
+{
+  "name": "transitionCards",
+  "version": "1.0.0",
+  "description": "Cards with dynamic background color change",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik NIlsson",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "node-accuweather": "^1.7.0"
+  }
+}
