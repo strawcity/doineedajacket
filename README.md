@@ -1,5 +1,5 @@
-# wftshouldiwear
-WTF Should I Wear
+# doineedajacket
+Do I need a fucking jacket?
 
 A location based weather suggestion to wear a jacket or not.
 
