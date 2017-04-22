@@ -27,7 +27,6 @@
       dynamics.animate(jacketTitle, {
         translateX: $(jacketTitle).parent().width() / 2 - $(jacketTitle).width() / 2 + 15,
         opacity: 1,
-        scale: 1
       }, {
         type: dynamics.spring,
         duration: 1350,

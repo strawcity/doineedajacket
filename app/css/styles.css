@@ -27,10 +27,10 @@ body {
 
 #active-ls,
 #city-code {
-  text-align: center;
-  padding: 40px 0 40px 0; }
+  text-align: center; }
   #active-ls h1,
   #city-code h1 {
+    font-weight: 900;
     margin: 0; }
 
 #city-code {
