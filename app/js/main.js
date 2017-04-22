@@ -30,13 +30,12 @@ function thisIsWhat(tempRange, windRange){
     Math.max.apply(Math,tempRange);
     Math.max.apply(Math,windRange);
     if (tempRange[0] < 10) {
-        console.log('thick jacket');
+        jacketSwitcher('winter-coat');
     } else if (tempRange[0] >= 10 && tempRange[0]<= 14){
         if (windRange[0] > 5) {
             console.log('Warmer but gonna be windy, grab a thicker coat');
         }
-        jacketSwitcher('light-jacket')
-        console.log('thin jacket');
+        jacketSwitcher('light-jacket');
     } else {
 
     }
@@ -66,7 +65,7 @@ function willItRain(forecasts) {
 
 function getWeatherCityName(city) {
     $('#loader').fadeIn();
-    var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&appid=5cef660da7c7763ee744868bd0d3327d",
+    var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
         tempRange = [],
         forecasts = [],
         windRange = [];
@@ -117,7 +116,7 @@ function getWeatherLatLon(lat, lon) {
 }
 
 $(document).ready(function() {
-    // getLocation();
+    getLocation();
     $('form').keypress(function(event) {
         return event.keyCode != 13;
     });

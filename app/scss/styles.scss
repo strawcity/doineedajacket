@@ -81,7 +81,7 @@ body {
     font-size: 36px;
     font-weight: 900;
     text-align: center;
-    width: 40%;
+    width: 55%;
 
     &:focus {
         outline: 0;
@@ -104,6 +104,10 @@ body {
     &:-ms-input-placeholder { /* Internet Explorer 10-11 */
        color:    $blue;
     }
+}
+
+.output {
+    padding-top: 40px;
 }
 
 .suggestions {

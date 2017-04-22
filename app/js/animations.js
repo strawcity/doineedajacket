@@ -1,11 +1,8 @@
-$(function() {
-  $('#colorselector').change(function(){
-    // $('.suggestions').hide();
-
-    var sugEl = document.querySelector('#' + $(this).val());
+  function jacketSwitcher(suggesiton){
+    var sugEl = document.querySelector('#' + suggesiton);
     animateImgIn(sugEl);
     animateTitleIn(sugEl);
-  });
+  };
 
   function animateImgIn(selectedJacket) {
       var jacketImage = (selectedJacket.querySelector('.jacket__image'));
@@ -21,7 +18,7 @@ $(function() {
         frequency: 75,
         friction: 340
       })
-  }
+  };
 
   function animateTitleIn(selectedJacket) {
       var jacketTitle = (selectedJacket.querySelector('.jacket__title'));
@@ -37,10 +34,4 @@ $(function() {
         frequency: 75,
         friction: 520
       })
-  }
-});
-
-function jacketSwitcher(suggestion){
-    $('.suggestions').hide();
-    $('#' + suggestion).show();
-};
+  };

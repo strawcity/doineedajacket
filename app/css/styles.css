@@ -61,7 +61,7 @@ body {
   font-size: 36px;
   font-weight: 900;
   text-align: center;
-  width: 40%; }
+  width: 55%; }
   .city-input:focus {
     outline: 0; }
   .city-input::-webkit-input-placeholder {
@@ -78,6 +78,9 @@ body {
   .city-input:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #74A7E6; }
+
+.output {
+  padding-top: 40px; }
 
 .suggestions {
   text-align: center;
