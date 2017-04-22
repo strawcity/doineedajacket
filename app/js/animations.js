@@ -1,29 +1,14 @@
 $(function() {
   $('#colorselector').change(function(){
     // $('.suggestions').hide();
-    // $('#' + $(this).val()).fadeIn(2450);
-    // $('#' + $(this).val()).parent().width() / 2 - $('#' + $(this).val()).width() / 2
+
     var sugEl = document.querySelector('#' + $(this).val());
-    console.log(sugEl);
-
-    //Animate whol div
-    // dynamics.animate(document.querySelector('#' + $(this).val()), {
-    //   translateX: $(jacketImage).parent().width() / 2 - $(jacketImage).width() / 2,
-    //   opacity: 1,
-    //   scale: 1
-    // }, {
-    //   type: dynamics.spring,
-    //   duration: 2450,
-    //   friction: 640
-    // })
-
-    animateImg(sugEl);
-    animateTitle(sugEl);
-
+    animateImgIn(sugEl);
+    animateTitleIn(sugEl);
   });
 
-  function animateImg(selectedJacket) {
-      var jacketImage = (selectedJacket.querySelector('img'));
+  function animateImgIn(selectedJacket) {
+      var jacketImage = (selectedJacket.querySelector('.jacket__image'));
 
       //Animate jacket image
       dynamics.animate(jacketImage, {
@@ -38,8 +23,8 @@ $(function() {
       })
   }
 
-  function animateTitle(selectedJacket) {
-      var jacketTitle = (selectedJacket.querySelector('h2'));
+  function animateTitleIn(selectedJacket) {
+      var jacketTitle = (selectedJacket.querySelector('.jacket__title'));
 
       //Animate jacket image
       dynamics.animate(jacketTitle, {
@@ -53,7 +38,6 @@ $(function() {
         friction: 520
       })
   }
-
 });
 
 function jacketSwitcher(suggestion){

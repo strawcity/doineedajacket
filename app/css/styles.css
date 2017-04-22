@@ -82,7 +82,7 @@ body {
 .suggestions {
   text-align: center;
   margin: 50px 0; }
-  .suggestions img {
+  .suggestions .jacket__image {
     left: 0;
     position: absolute;
     opacity: 0;
@@ -93,21 +93,20 @@ body {
     transform: rotate(-5deg);
     transform: scale(0.7);
     height: 420px; }
-  .suggestions h2 {
+  .suggestions .jacket__title {
+    font-size: 2.5em;
+    font-weight: 900;
+    margin: 0 auto;
+    padding: 1em 0 0 0;
     left: 0;
+    bottom: 0;
+    z-index: -100;
     position: absolute;
     opacity: 0; }
-
-.jacket__title {
-  font-size: 2.5em;
-  font-weight: 900;
-  margin: 0 auto;
-  padding: 1em 0 0 0; }
-
-.jacket__title span {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 55%;
-  display: block;
-  color: #EDE6FF;
-  padding-top: 8px; }
+    .suggestions .jacket__title span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 55%;
+      display: block;
+      color: #EDE6FF;
+      padding-top: 8px; }
