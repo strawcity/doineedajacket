@@ -60,6 +60,8 @@ function willItRain(forecasts) {
         $('span#will-it-rain').text("But it'll be pissing down rain");
     } else if (drizzle === true) {
         $('span#will-it-rain').text("There'll be a bit of sea breeze though");
+    } else {
+        $('#sunny').animate({opacity: 1}, 850);
     }
 }
 
