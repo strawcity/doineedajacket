@@ -7,7 +7,19 @@
       var titleSection = (document.querySelector('.suggestion'));
       var translateX = (document.querySelector('.body-container'));
       dynamics.animate(titleSection, {
-        translateX: 2015,
+        translateX: 2030,
+      }, {
+          type: dynamics.spring,
+          duration: 1000,
+          frequency: 23,
+          friction: 207
+      })
+  };
+
+  function tempBoxAnimation() {
+      var tempBox = (document.querySelector('.temp-box'));
+      dynamics.animate(tempBox, {
+        translateX: -330,
       }, {
           type: dynamics.spring,
           duration: 750,
@@ -16,12 +28,11 @@
       })
   };
 
-  function tempBoxAnimation() {
-      var tempBox = (document.querySelector('.temp-box'));
-      var translateX = (document.querySelector('.body-container'));
+  function tweetLinkAnimation() {
+      var tweetLink = (document.querySelector('.tweet-link'));
       console.log('temp');
-      dynamics.animate(tempBox, {
-        translateX: -315,
+      dynamics.animate(tweetLink, {
+        translateY: -55,
       }, {
           type: dynamics.spring,
           duration: 750,

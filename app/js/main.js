@@ -3,6 +3,7 @@ function getLocation() {
 }
 
 function saveLatLon(position) {
+    setTimeout(getWeatherLatLon, 2000);
     getWeatherLatLon(position.coords.latitude.toFixed(2), position.coords.longitude.toFixed(2));
 }
 
@@ -48,6 +49,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
 
     switch (true) {
         case tempRange < 0:
+            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -63,6 +65,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0]<=3 && tempRange[0]>0:
+            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -79,6 +82,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0] <=10 && tempRange[0] >3:
+            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
@@ -89,11 +93,12 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                 default:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
-                    $('.suggestion__forecast').text("grab your shades, brah");
+                    $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
         case tempRange[0] <=15 && tempRange[0] >10:
+            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You should grab a light coat");
@@ -104,11 +109,12 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                 default:
                     $('.suggestion__jacket').text("You should grab a light coat");
-                    $('.suggestion__forecast').text("grab your shades, brah");
+                    $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
         case tempRange[0] <=17 && tempRange[0] >15:
+            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
@@ -119,7 +125,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                 default:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
-                    $('.suggestion__forecast').text("grab your shades, brah");
+                    $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
@@ -134,7 +140,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("but peep the possible drizzle");
                 default:
                     $('.suggestion__jacket').text("Could just grab a hoodie for later");
-                    $('.suggestion__forecast').text("grab your shades, brah");
+                    $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
@@ -149,7 +155,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("but peep the possible drizzle");
                 default:
                     $('.suggestion__jacket').text("You kidding? Fuck a jacket!");
-                    $('.suggestion__forecast').text("grab your shades, brah");
+                    $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
     }

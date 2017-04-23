@@ -43,13 +43,13 @@ body {
     color: $purple;
 
     &.minified {
-        margin: 15px;
+        margin: 30px;
         padding: 0;
         font-size: 20px;
         text-align: left;
         height: 25px;
-        -webkit-transition: all ease 0.75s; /* Safari */
-        transition: all ease 0.75s;
+        -webkit-transition: all ease 1s; /* Safari */
+        transition: all ease 1s;
     }
 }
 
@@ -131,7 +131,7 @@ body {
 .temp-box {
     position: fixed;
     z-index: 100;
-    top: 15px;
+    top: 30px;
     right: -305px;
     height: 285px;
     width: 300px;
@@ -208,4 +208,34 @@ body {
             }
         }
     }
+}
+
+.tweet-link {
+    position: fixed;
+    z-index: 100;
+    bottom: -25px;
+    left: 30px;
+    width: 500px;
+    opacity: 0.3;
+    -webkit-transition: opacity ease 0.2s; /* Safari */
+    transition: opacity ease 0.2s;
+    &:hover {
+        opacity: 1;
+        -webkit-transition: opacity ease 0.2s; /* Safari */
+        transition: opacity ease 0.2s;
+    }
+    a {
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: white;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    i {
+        padding-right: 7px;
+        vertical-align: middle;
+    }
+
 }
