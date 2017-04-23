@@ -7,10 +7,38 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>WTF should I wear?</title>
+    <title>Do I need a fucking jacket?</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--
+    /**
+     * @license
+     * MyFonts Webfont Build ID 3378592, 2017-04-23T03:29:40-0400
+     *
+     * The fonts listed in this notice are subject to the End User License
+     * Agreement(s) entered into by the website owner. All other parties are
+     * explicitly restricted from using the Licensed Webfonts(s).
+     *
+     * You may obtain a valid license at the URLs below.
+     *
+     * Webfont: BalboaPlus-Fill by Parkinson
+     * URL: http://www.myfonts.com/fonts/parkinson/balboa-plus/fill/
+     * Copyright: BalboaPlus (c) Copyright, 2015. Parkinson Type Design.
+     * Licensed pageviews: 10,000
+     *
+     *
+     * License: http://www.myfonts.com/viewlicense?type=web&buildid=3378592
+     *
+     * © 2017 MyFonts Inc
+    */
+
+    -->
+    <link rel="stylesheet" type="text/css" href="css/fonts/MyFontsWebfontsKit.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts/Butler_Webfont/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts/Butler_Stencil_Webfont/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
@@ -25,37 +53,37 @@
 
 <body>
     <div class="body-container">
+        <div id="bg-gradient">
+        </div>
         <div class="row">
-            <div class="title-section col-md-4 col-md-offset-4">
-                <h2>Do I need a fucking jacket?</h2>
-                <h4 class="sub-header">a weather based suggestion<h4>
+            <div class="title-section col-md-8 col-md-offset-2">
+                <span id="title-text">do I need a fucking jacket?</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3" id="city-code">
-                <form id="submit-city">
-                    <h1>I'm in</h1>
-                    <input class="city-input" type="text" placeholder="My city, USA">
-                    <input id="submit-city" class="button-styled" type="submit" value="What the fuck do I need?">
+            <div class="col-md-8 col-md-offset-2" id="city-code">
+                <form class="submit-city-form">
+                    <h1 class="city-title">If I'm in</h1>
+                    <input class="city-input" type="text" autofocus="autofocus" placeholder="My city, USA"/>
+                    <button id="submit-city" class="button-styled" onclick="submitCity()">What the fuck do I need?</button>
                 </form>
             </div>
         </div>
 
-        <div class="row">
-            <div class="output col-md-12">
-                <div id="winter-coat" class="suggestions">
-                      <img class="jacket__image" src="img/winterjacket.png" alt="Winter Jacket" />
-                      <h2 class="jacket__title">Go with the ticker coat<span id="will-it-rain"></span></h2>
-                </div>
-                <div id="light-jacket" class="suggestions">
-                      <img class="jacket__image" src="img/anarak.png" alt="Light Jacket" />
-                      <h2 class="jacket__title">You can get away with a light jacket.<span id="will-it-rain"></span></h2>
-                </div>
-                <div id="no-jacket" class="suggestions">
-                      <img class="jacket__image" src="img/anarak.png" alt="No Jacket" />
-                      <h2 class="jacket__title">Suns out, guns out!<span id="will-it-rain"></span></h2>
+        <div class="temp-box">
+            <span id="temp-number">8</span>° <span id="temp-unit">C</span>
+        </div>
+
+        <div class="row output">
+            <div class="col-md-12">
+                <div class="suggestion">
+                      <h1 class="suggestion__jacket"></h1>
+                      <h4 class="suggestion__forecast"></h4>
                 </div>
             </div>
+        </div>
+        <div class="tweet-link">
+             <i class="fa fa-twitter" style="font-size:24px" target="_blank"></i><a href="http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.">Tell your friend to get a fucking jacket</a>
         </div>
     </div>
     <!-- jQuery -->

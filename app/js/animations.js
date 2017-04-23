@@ -1,36 +1,42 @@
-  function jacketSwitcher(suggesiton){
-    var sugEl = document.querySelector('#' + suggesiton);
-    animateImgIn(sugEl);
-    animateTitleIn(sugEl);
+  function pageTitleAnimation() {
+      var titleSection = (document.querySelector('.title-section'));
+      $('.title-section').addClass('minified');
   };
 
-  function animateImgIn(selectedJacket) {
-      var jacketImage = (selectedJacket.querySelector('.jacket__image'));
-
-      //Animate jacket image
-      dynamics.animate(jacketImage, {
-        translateX: $(jacketImage).parent().width() / 2 - $(jacketImage).width() / 2 + 15,
-        opacity: 1,
-        scale: 1
+  function suggestionJacketAnimation() {
+      var titleSection = (document.querySelector('.suggestion'));
+      var translateX = (document.querySelector('.body-container'));
+      dynamics.animate(titleSection, {
+        translateX: 2030,
       }, {
-        type: dynamics.spring,
-        duration: 1050,
-        frequency: 75,
-        friction: 340
+          type: dynamics.spring,
+          duration: 1000,
+          frequency: 23,
+          friction: 207
       })
   };
 
-  function animateTitleIn(selectedJacket) {
-      var jacketTitle = (selectedJacket.querySelector('.jacket__title'));
-
-      //Animate jacket image
-      dynamics.animate(jacketTitle, {
-        translateX: $(jacketTitle).parent().width() / 2 - $(jacketTitle).width() / 2 + 15,
-        opacity: 1,
+  function tempBoxAnimation() {
+      var tempBox = (document.querySelector('.temp-box'));
+      dynamics.animate(tempBox, {
+        translateX: -330,
       }, {
-        type: dynamics.spring,
-        duration: 1350,
-        frequency: 75,
-        friction: 520
+          type: dynamics.spring,
+          duration: 750,
+          frequency: 23,
+          friction: 207
+      })
+  };
+
+  function tweetLinkAnimation() {
+      var tweetLink = (document.querySelector('.tweet-link'));
+      console.log('temp');
+      dynamics.animate(tweetLink, {
+        translateY: -55,
+      }, {
+          type: dynamics.spring,
+          duration: 750,
+          frequency: 23,
+          friction: 207
       })
   };
