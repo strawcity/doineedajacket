@@ -13,17 +13,19 @@ function showError(error) {
             break;
         case error.POSITION_UNAVAILABLE:
             $('#city-code').show();
-            $( "#submit-city" ).submit(function( event ) {
-                getWeatherCityName($( "input:first" ).val());
-                $('input#submit-city').fadeOut();
-                event.preventDefault();
-            });
             break;
         case error.TIMEOUT:
             break;
         case error.UNKNOWN_ERROR:
             break;
     }
+}
+
+function submitCity() {
+    console.log($( "input:first" ).val());
+        getWeatherCityName($( "input:first" ).val());
+        $('.submit-city-form').fadeOut('fast');
+        event.preventDefault();
 }
 
 function thisIsWhat(tempRange, windRange){
@@ -63,6 +65,11 @@ function willItRain(forecasts) {
     } else {
         $('#sunny').animate({opacity: 1}, 850);
     }
+}
+
+function setFormWidth() {
+    var formWidth = $('#title-text').width();
+    $('.submit-city-form').css("width",formWidth);
 }
 
 function getWeatherCityName(city) {
@@ -120,6 +127,7 @@ function getWeatherLatLon(lat, lon) {
 }
 
 $(document).ready(function() {
+    // setFormWidth();
     getLocation();
     $('form').keypress(function(event) {
         return event.keyCode != 13;

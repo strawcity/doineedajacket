@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
 body {
   font-family: Arial;
   color: #FFF;
@@ -31,61 +32,67 @@ body {
   font-size: 70px;
   color: #9012FE; }
 
-#active-ls,
-#city-code {
-  text-align: center; }
-  #active-ls h1,
-  #city-code h1 {
-    font-weight: 900;
-    margin: 0; }
+.submit-city-form {
+  margin: 0 auto;
+  text-align: left; }
+  .submit-city-form .city-title {
+    font-weight: 300;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Helvetica, Arial;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
 
 #city-code {
   display: none; }
 
 .button-styled {
   display: block;
-  margin: 0 auto;
-  background: #FFF;
-  color: #0374DA;
+  float: right;
+  background: none;
+  color: #9012FE;
   font-size: 16px;
-  border-radius: 13px;
   padding: 9px 16px;
-  font-family: "butlerlight";
-  border: #FFF 1px solid;
-  width: 40%; }
+  font-family: "butler_stencilregular";
+  border: #9012FE 1px solid;
+  width: 30%; }
   .button-styled:focus {
     outline: 0; }
 
 .city-input {
-  position: relative;
-  bottom: 6px;
+  font-family: "Special Elite", cursive;
   border-top: none;
   border-left: none;
   border-right: none;
   background: none;
-  border-bottom: 1px solid #FFF;
-  font-size: 36px;
+  border-bottom: 1px solid #9012FE;
+  font-size: 25px;
   font-weight: 900;
-  text-align: center;
-  width: 55%; }
+  width: 68%;
+  margin-top: 4px; }
   .city-input:focus {
     outline: 0; }
   .city-input::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
-    color: #74A7E6; }
+    color: #333;
+    font-family: "Special Elite", cursive; }
   .city-input:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: #74A7E6;
-    opacity: 1; }
+    color: #333;
+    opacity: 1;
+    font-family: "Special Elite", cursive; }
   .city-input::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: #74A7E6;
-    opacity: 1; }
+    color: #333;
+    opacity: 1;
+    font-family: "Special Elite", cursive; }
   .city-input:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: #74A7E6; }
+    color: #333;
+    font-family: "Special Elite", cursive; }
 
 .output {
+  display: none;
   padding-top: 40px; }
 
 .suggestions {

@@ -56,21 +56,21 @@
         </div>
         <div class="row">
             <div class="title-section col-md-8 col-md-offset-2">
-                <span>do I need a fucking jacket?</span>
+                <span id="title-text">do I need a fucking jacket?</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3" id="city-code">
-                <form id="submit-city">
-                    <h1>I'm in</h1>
-                    <input class="city-input" type="text" placeholder="My city, USA">
-                    <input id="submit-city" class="button-styled" type="submit" value="What the fuck do I need?">
+            <div class="col-md-8 col-md-offset-2" id="city-code">
+                <form class="submit-city-form">
+                    <h1 class="city-title">If I'm in</h1>
+                    <input class="city-input" type="text" autofocus="autofocus" placeholder="My city, USA"/>
+                    <button id="submit-city" class="button-styled" onclick="submitCity()">What the fuck do I need?</button>
                 </form>
             </div>
         </div>
 
-        <div class="row">
-            <div class="output col-md-12">
+        <div class="row output">
+            <div class=" col-md-12">
                 <div id="winter-coat" class="suggestions">
                       <img class="jacket__image" src="img/winterjacket.png" alt="Winter Jacket" />
                       <h2 class="jacket__title">Go with the ticker coat<span id="will-it-rain"></span></h2>

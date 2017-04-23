@@ -42,12 +42,18 @@ body {
     color: $purple;
 }
 
-#active-ls,
-#city-code {
-    text-align: center;
-    h1 {
-        font-weight: 900;
-        margin: 0;
+// Submit city-code
+
+.submit-city-form {
+    margin: 0 auto;
+    text-align: left;
+    .city-title {
+        font-weight: 300;
+        margin: 20px 0;
+        font-size: 16px;
+        font-family: Helvetica, Arial;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 }
 
@@ -57,15 +63,14 @@ body {
 
 .button-styled {
     display: block;
-    margin: 0 auto;
-    background: $white;
-    color: $darkest-blue;
+    float: right;
+    background: none;
+    color: $purple;
     font-size: 16px;
-    border-radius: 13px;
     padding: 9px 16px;
-    font-family: $butler;
-    border: $white 1px solid;
-    width: 40%;
+    font-family: $butler-stencil;
+    border: $purple 1px solid;
+    width: 30%;
 
     &:focus {
         outline: 0;
@@ -73,42 +78,46 @@ body {
 }
 
 .city-input {
-    position: relative;
-    bottom: 6px;
+    font-family: $typewriter;
     border-top: none;
     border-left: none;
     border-right: none;
     background: none;
-    border-bottom: 1px solid $white;
-    font-size: 36px;
+    border-bottom: 1px solid $purple;
+    font-size: 25px;
     font-weight: 900;
-    text-align: center;
-    width: 55%;
+    width: 68%;
+    margin-top: 4px;
 
     &:focus {
         outline: 0;
     }
 
     &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-        color:    $blue;
+        color: #333;
+        font-family: $typewriter;
     }
 
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-       color:    $blue;
+       color: #333;
        opacity:  1;
+       font-family: $typewriter;
     }
 
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-       color:    $blue;
+       color:    #333;
        opacity:  1;
+       font-family: $typewriter;
     }
 
     &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-       color:    $blue;
+       color:    #333;
+       font-family: $typewriter;
     }
 }
 
 .output {
+    display: none;
     padding-top: 40px;
 }
 

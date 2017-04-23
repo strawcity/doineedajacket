@@ -59,10 +59,10 @@
       dynamics.animate(titleSection, {
         translateX: ($(titleSection).parent().width() / 2 - $(titleSection).width()/4) * -1,
         translateY: ($(titleSection).parent().height() / 2) * -1,
-        scale: 0.4
+        scale: 0.35
       }, {
           type: dynamics.spring,
-          duration: 557,
+          duration: 675,
           frequency: 23,
           friction: 207
       })
