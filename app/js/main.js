@@ -22,13 +22,12 @@ function showError(error) {
 }
 
 function submitCity() {
-    console.log($( "input:first" ).val());
-        getWeatherCityName($( "input:first" ).val());
-        $('.submit-city-form').fadeOut('fast');
-        event.preventDefault();
+    getWeatherCityName($( "input:first" ).val());
+    $('.submit-city-form').fadeOut('fast');
+    event.preventDefault();
 }
 
-function thisIsWhat(tempRange, windRange){
+function thisIsWhat(tempRange, windRange, useFahrenheit){
     Math.max.apply(Math,tempRange);
     Math.max.apply(Math,windRange);
     if (tempRange[0] < 10) {
@@ -43,6 +42,8 @@ function thisIsWhat(tempRange, windRange){
     } else {
         populateSuggestion('no-jacket');
     }
+
+    tempBox(tempRange[0], useFahrenheit);
 }
 
 function willItRain(forecasts) {
@@ -61,11 +62,20 @@ function willItRain(forecasts) {
     // Add array of sayings and randomize what to output
     if (rain === true) {
         // $('#sunny').animate({"opacity":"1"}, 300);
-        $('.suggestion__forecast').text("But it'll be pissing down rain");
+        $('.suggestion__forecast').text("and it'll be pissing down rain");
     } else if (drizzle === true) {
-        $('.suggestion__forecast').text("There'll be a bit of sea breeze though");
+        $('.suggestion__forecast').text("and there'll be a bit of sea breeze though");
     } else {
         $('.suggestion__forecast').text("Clear skies, for the cries");
+    }
+}
+
+function tempBox(temp, useFahrenheit) {
+    if (useFahrenheit === true) {
+        $('#temp-unit').text('F');
+        $('#temp-number').text(Math.round(temp * 9/5 + 32));
+    } else {
+        $('#temp-number').text(Math.round(temp));
     }
 }
 
@@ -75,23 +85,18 @@ function setFormWidth() {
 }
 
 function populateSuggestion(suggesiton){
-
-  console.log(suggesiton);
-
   pageTitleAnimation();
-  suggestionJacketAnimation()
-  // animateImgIn(sugEl);
-  // animateTitleIn(sugEl);
-
+  suggestionJacketAnimation();
+  tempBoxAnimation();
 };
 
 function getWeatherCityName(city) {
-    console.log(city);
     $('#loader').fadeIn();
     var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
         tempRange = [],
         forecasts = [],
-        windRange = [];
+        windRange = [],
+        useFahrenheit = false;
     $.ajax({
        type: "GET",
        dataType: "jsonp",
@@ -99,7 +104,7 @@ function getWeatherCityName(city) {
        url: locationAPI,
        cache: false,
        success: function (data) {
-           console.log(data);
+           console.log(data.city.country);
             $.each(data.list, function (i, item) {
                 if (i <= 5) {
 
@@ -108,8 +113,13 @@ function getWeatherCityName(city) {
                     windRange.push(item.wind.speed);
                 }
           });
+
+          if (data.city.country === "US") {
+              useFahrenheit = true;
+          }
+
           willItRain(forecasts);
-          thisIsWhat(tempRange, windRange);
+          thisIsWhat(tempRange, windRange, useFahrenheit);
         }
     });
 }
@@ -118,7 +128,8 @@ function getWeatherLatLon(lat, lon) {
     var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
         tempRange = [],
         forecasts = [],
-        windRange = [];
+        windRange = [],
+        useFahrenheit = false;
     $.ajax({
        type: "GET",
        dataType: "jsonp",
@@ -133,8 +144,13 @@ function getWeatherLatLon(lat, lon) {
                     windRange.push(item.wind.speed);
                 }
           });
+
+          if (data.city.country === "US") {
+              useFahrenheit = true;
+          }
+
           willItRain(forecasts);
-          thisIsWhat(tempRange, windRange);
+          thisIsWhat(tempRange, windRange, useFahrenheit);
         }
     });
 }
