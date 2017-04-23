@@ -34,22 +34,12 @@ body {
 // Title Section
 
 .title-section {
-    margin-top: 20px;
-    font-family: $balboa;
+    font-family: $butler-stencil;
     text-align: center;
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h4 {
-        font-size: 14px;
-    }
-
-    .sub-header {
-        opacity: 0.4;
-        margin-top: 0;
-    }
+    height: 50vh;
+    margin-top: 30vh;
+    font-size: 70px;
+    color: $purple;
 }
 
 #active-ls,

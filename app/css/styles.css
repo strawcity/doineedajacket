@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  color: #EDE6FF;
+  color: #FFF;
   background-color: #000; }
   body h1 {
     font-weight: 700; }
@@ -24,16 +24,12 @@ body {
   margin: 0; }
 
 .title-section {
-  margin-top: 20px;
-  font-family: BalboaPlus-Fill;
-  text-align: center; }
-  .title-section h2 {
-    font-size: 20px; }
-  .title-section h4 {
-    font-size: 14px; }
-  .title-section .sub-header {
-    opacity: 0.4;
-    margin-top: 0; }
+  font-family: "butler_stencilregular";
+  text-align: center;
+  height: 50vh;
+  margin-top: 30vh;
+  font-size: 70px;
+  color: #9012FE; }
 
 #active-ls,
 #city-code {
@@ -49,13 +45,13 @@ body {
 .button-styled {
   display: block;
   margin: 0 auto;
-  background: #EDE6FF;
+  background: #FFF;
   color: #0374DA;
   font-size: 16px;
   border-radius: 13px;
   padding: 9px 16px;
   font-family: "butlerlight";
-  border: #EDE6FF 1px solid;
+  border: #FFF 1px solid;
   width: 40%; }
   .button-styled:focus {
     outline: 0; }
@@ -67,7 +63,7 @@ body {
   border-left: none;
   border-right: none;
   background: none;
-  border-bottom: 1px solid #EDE6FF;
+  border-bottom: 1px solid #FFF;
   font-size: 36px;
   font-weight: 900;
   text-align: center;
@@ -121,5 +117,5 @@ body {
       font-weight: 300;
       font-size: 55%;
       display: block;
-      color: #EDE6FF;
+      color: #FFF;
       padding-top: 8px; }
