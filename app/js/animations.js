@@ -1,15 +1,8 @@
 
-  function jacketSwitcher(suggesiton){
-    var sugEl = document.querySelector('#' + suggesiton);
 
-    pageTitleAnimation();
-    animateImgIn(sugEl);
-    animateTitleIn(sugEl);
-
-  };
 
   $('#colorselector').change(function(){
-    // $('.suggestions').hide();
+    // $('.suggestion').hide();
 
     var sugEl = document.querySelector('#' + $(this).val());
     animateImgIn(sugEl);
@@ -50,19 +43,34 @@
 
 
   function pageTitleAnimation() {
+      console.log('ran');
       var titleSection = (document.querySelector('.title-section'));
-      console.log($(titleSection).parent().width());
-      console.log($(titleSection).width());
-    //   console.log(($(titleSection).parent().width() / 2 - $(titleSection).width()/2) * -1);
 
-      //Animate jacket image
+      $('.title-section').addClass('minified');
+      //
+    //   dynamics.animate(titleSection, {
+    //     translateX: ($(titleSection).parent().width() / 2 - $(titleSection).width()/4) * -1,
+    //     translateY: ($(titleSection).parent().height() / 2) * -1,
+    //     scale: 0.35
+    //   }, {
+    //       type: dynamics.spring,
+    //       duration: 675,
+    //       frequency: 23,
+    //       friction: 207
+    //   })
+  };
+
+  function suggestionJacketAnimation() {
+      var titleSection = (document.querySelector('.suggestion'));
+      var translateX = (document.querySelector('.body-container'));
+      console.log($(translateX).width());
+
       dynamics.animate(titleSection, {
-        translateX: ($(titleSection).parent().width() / 2 - $(titleSection).width()/4) * -1,
-        translateY: ($(titleSection).parent().height() / 2) * -1,
-        scale: 0.35
+        translateX: $(translateX).width() + 15,
+        // translateY: ($(titleSection).parent().height() / 2) * -1
       }, {
           type: dynamics.spring,
-          duration: 675,
+          duration: 750,
           frequency: 23,
           friction: 207
       })

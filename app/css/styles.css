@@ -15,7 +15,7 @@ body {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    z-index: -100;
+    z-index: -200;
     background: -webkit-gradient(linear, left top, left bottom, from(#b0c4ff), to(#6289ff)) fixed; }
   .body-container #rainy {
     opacity: 0;
@@ -26,11 +26,19 @@ body {
 
 .title-section {
   font-family: "butler_stencilregular";
-  text-align: center;
-  height: 50vh;
+  text-align: left;
   margin-top: 30vh;
   font-size: 70px;
   color: #9012FE; }
+  .title-section.minified {
+    margin: 15px;
+    padding: 0;
+    font-size: 20px;
+    text-align: left;
+    height: 25px;
+    -webkit-transition: all ease 0.75s;
+    /* Safari */
+    transition: all ease 0.75s; }
 
 .submit-city-form {
   margin: 0 auto;
@@ -92,37 +100,56 @@ body {
     font-family: "Special Elite", cursive; }
 
 .output {
-  display: none;
-  padding-top: 40px; }
-
-.suggestions {
-  text-align: center;
-  margin: 50px 0; }
-  .suggestions .jacket__image {
-    left: 0;
+  position: relative;
+  z-index: 50;
+  padding-top: 40px;
+  width: 100%; }
+  .output .suggestion {
+    text-align: center;
+    margin: 0;
+    right: 100vw;
+    width: 100%;
     position: absolute;
-    opacity: 0;
-    -ms-transform: rotate(-5deg);
-    /* IE 9 */
-    -webkit-transform: rotate(-5deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(-5deg);
-    transform: scale(0.7);
-    height: 420px; }
-  .suggestions .jacket__title {
-    font-size: 2.5em;
-    font-weight: 900;
-    margin: 0 auto;
-    padding: 1em 0 0 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    position: absolute;
-    opacity: 0; }
-    .suggestions .jacket__title span {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      font-size: 55%;
-      display: block;
-      color: #FFF;
-      padding-top: 8px; }
+    z-index: -100; }
+    .output .suggestion__jacket {
+      font-family: BalboaPlus-Fill;
+      text-align: left;
+      font-size: 190px;
+      line-height: 175px;
+      letter-spacing: -8px; }
+    .output .suggestion__forecast {
+      width: 100%;
+      position: absolute;
+      z-index: -100;
+      font-family: "butlerbold";
+      text-align: left;
+      color: #9012FE;
+      font-size: 50px; }
+    .output .suggestion .jacket__image {
+      left: 0;
+      position: absolute;
+      opacity: 0;
+      -ms-transform: rotate(-5deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-5deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-5deg);
+      transform: scale(0.7);
+      height: 420px; }
+    .output .suggestion .jacket__title {
+      font-size: 2.5em;
+      font-weight: 900;
+      margin: 0 auto;
+      padding: 1em 0 0 0;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      position: absolute;
+      opacity: 0; }
+      .output .suggestion .jacket__title span {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 55%;
+        display: block;
+        color: #FFF;
+        padding-top: 8px; }

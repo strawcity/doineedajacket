@@ -32,14 +32,16 @@ function thisIsWhat(tempRange, windRange){
     Math.max.apply(Math,tempRange);
     Math.max.apply(Math,windRange);
     if (tempRange[0] < 10) {
-        jacketSwitcher('winter-coat');
+        $('.suggestion__jacket').text("You're gonna need a bigger coat");
+        populateSuggestion('winter-coat');
+        $('.output').show();
     } else if (tempRange[0] >= 10 && tempRange[0]<= 14){
         if (windRange[0] > 5) {
             console.log('Warmer but gonna be windy, grab a thicker coat');
         }
-        jacketSwitcher('light-jacket');
+        populateSuggestion('light-jacket');
     } else {
-        jacketSwitcher('no-jacket');
+        populateSuggestion('no-jacket');
     }
 }
 
@@ -58,12 +60,12 @@ function willItRain(forecasts) {
 
     // Add array of sayings and randomize what to output
     if (rain === true) {
-        $('body').animate({"background-color":"#929EA8"}, 300);
-        $('span#will-it-rain').text("But it'll be pissing down rain");
+        // $('#sunny').animate({"opacity":"1"}, 300);
+        $('.suggestion__forecast').text("But it'll be pissing down rain");
     } else if (drizzle === true) {
-        $('span#will-it-rain').text("There'll be a bit of sea breeze though");
+        $('.suggestion__forecast').text("There'll be a bit of sea breeze though");
     } else {
-        $('#sunny').animate({opacity: 1}, 850);
+        $('.suggestion__forecast').text("Clear skies, for the cries");
     }
 }
 
@@ -71,6 +73,17 @@ function setFormWidth() {
     var formWidth = $('#title-text').width();
     $('.submit-city-form').css("width",formWidth);
 }
+
+function populateSuggestion(suggesiton){
+
+  console.log(suggesiton);
+
+  pageTitleAnimation();
+  suggestionJacketAnimation()
+  // animateImgIn(sugEl);
+  // animateTitleIn(sugEl);
+
+};
 
 function getWeatherCityName(city) {
     console.log(city);
