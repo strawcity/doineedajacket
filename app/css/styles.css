@@ -117,6 +117,8 @@ body {
   text-align: center;
   font-size: 90px;
   color: #9012FE; }
+  .temp-box:hover {
+    cursor: pointer; }
 
 .output {
   position: relative;

@@ -143,6 +143,9 @@ body {
     text-align: center;
     font-size: 90px;
     color: $purple;
+    &:hover {
+        cursor:pointer;
+    }
 }
 
 //Output styles
