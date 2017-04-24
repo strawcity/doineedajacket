@@ -102,7 +102,7 @@ body {
     color: #333;
     font-family: "Special Elite", cursive; }
 
-.temp-box {
+.temp-card {
   position: fixed;
   z-index: 100;
   top: 30px;
