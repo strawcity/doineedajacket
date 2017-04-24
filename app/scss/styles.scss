@@ -20,12 +20,12 @@ body {
         right: 0px;
         z-index: -200;
         background: rgba(30,46,65,1);
-        background: -moz-linear-gradient(45deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
+        background: -moz-linear-gradient(65deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
         background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(30,46,65,1)), color-stop(100%, rgba(14,8,131,1)));
-        background: -webkit-linear-gradient(45deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
-        background: -o-linear-gradient(45deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
-        background: -ms-linear-gradient(45deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
-        background: linear-gradient(45deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
+        background: -webkit-linear-gradient(65deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
+        background: -o-linear-gradient(65deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
+        background: -ms-linear-gradient(65deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
+        background: linear-gradient(65deg, rgba(30,46,65,1) 0%, rgba(14,8,131,1) 100%);
     }
 }
 
@@ -135,6 +135,8 @@ body {
     right: -305px;
     height: 285px;
     width: 300px;
+}
+.temp-box {
     background: none;
     border: 1px solid $purple;
     font-family: $butler-stencil;
@@ -147,7 +149,6 @@ body {
 .output {
     position: relative;
     z-index: 50;
-    // display: none;
     padding-top: 40px;
     width: 95%;
 
@@ -160,7 +161,6 @@ body {
         z-index: -100;
 
         &__jacket {
-
             font-family: $balboa;
             text-align: left;
             font-size: 170px;
@@ -237,5 +237,4 @@ body {
         padding-right: 7px;
         vertical-align: middle;
     }
-
 }

@@ -17,12 +17,12 @@
   };
 
   function tempBoxAnimation() {
-      var tempBox = (document.querySelector('.temp-box'));
+      var tempBox = (document.querySelector('.temp-card'));
       dynamics.animate(tempBox, {
-        translateX: -330,
+        translateX: -335,
       }, {
           type: dynamics.spring,
-          duration: 750,
+          duration: 1250,
           frequency: 23,
           friction: 207
       })
@@ -30,7 +30,6 @@
 
   function tweetLinkAnimation() {
       var tweetLink = (document.querySelector('.tweet-link'));
-      console.log('temp');
       dynamics.animate(tweetLink, {
         translateY: -55,
       }, {
@@ -40,3 +39,5 @@
           friction: 207
       })
   };
+
+  $("#card-flipper").flip({trigger: 'click'});

@@ -3,7 +3,6 @@ function getLocation() {
 }
 
 function saveLatLon(position) {
-    setTimeout(getWeatherLatLon, 2000);
     getWeatherLatLon(position.coords.latitude.toFixed(2), position.coords.longitude.toFixed(2));
 }
 
@@ -23,13 +22,14 @@ function showError(error) {
 }
 
 function submitCity() {
-    getWeatherCityName($( "input:first" ).val());
-    $('.submit-city-form').fadeOut('fast');
+    if ($( "input:first" ).val()) {
+        getWeatherCityName($( "input:first" ).val());
+        $('.submit-city-form').fadeOut('fast');
+    }
     event.preventDefault();
 }
 
 function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
-    console.log('ran');
     var drizzle,
         rain,
         hour;
@@ -60,7 +60,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__forecast').text("bit'a flurry here and there");
                     break;
                 default:
-                    console.log('no rain');
+                    //console.log('no rain');
             }
             break;
 
@@ -102,7 +102,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You should grab a light coat");
-                    $('.suggestion__forecast').text("and it could piss down rain");
+                    $('.suggestion__forecast').text("don't forget your snorkel");
                     break;
                 case drizzle:
                     $('.suggestion__jacket').text("You should grab a light coat");
@@ -164,18 +164,9 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
     animateElements();
 }
 
-function tempBox(temp, useFahrenheit) {
-    if (useFahrenheit === true) {
-        $('#temp-unit').text('F');
-        $('#temp-number').text(Math.round(temp * 9/5 + 32));
-    } else {
-        $('#temp-number').text(Math.round(temp));
-    }
-}
-
-function setFormWidth() {
-    var formWidth = $('#title-text').width();
-    $('.submit-city-form').css("width",formWidth);
+function tempBox(temp) {
+    $('#temp-f-number').text(Math.round(temp * 9/5 + 32));
+    $('#temp-c-number').text(Math.round(temp));
 }
 
 function animateElements(){
@@ -189,8 +180,7 @@ function getWeatherCityName(city) {
     var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
         tempRange = [],
         forecasts = [],
-        windRange = [],
-        useFahrenheit = false;
+        windRange = [];
     $.ajax({
        type: "GET",
        dataType: "jsonp",
@@ -200,18 +190,12 @@ function getWeatherCityName(city) {
        success: function (data) {
             $.each(data.list, function (i, item) {
                 if (i <= 5) {
-                    console.log(item);
                     tempRange.push(item.main.temp);
                     forecasts.push(item.weather[0].description);
                     windRange.push(item.wind.speed);
                 }
           });
-
-          if (data.city.country === "US") {
-              useFahrenheit = true;
-          }
-
-          thisIsWhat(tempRange, windRange, forecasts, useFahrenheit);
+          thisIsWhat(tempRange, windRange, forecasts);
         }
     });
 }
@@ -220,8 +204,7 @@ function getWeatherLatLon(lat, lon) {
     var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
         tempRange = [],
         forecasts = [],
-        windRange = [],
-        useFahrenheit = false;
+        windRange = [];
     $.ajax({
        type: "GET",
        dataType: "jsonp",
@@ -236,19 +219,11 @@ function getWeatherLatLon(lat, lon) {
                     windRange.push(item.wind.speed);
                 }
           });
-
-          if (data.city.country === "US") {
-              useFahrenheit = true;
-          }
-
-          thisIsWhat(tempRange, windRange, forecasts, useFahrenheit);
+          thisIsWhat(tempRange, windRange, forecasts);
         }
     });
 }
 
 $(document).ready(function() {
     getLocation();
-    $('form').keypress(function(event) {
-        return event.keyCode != 13;
-    });
 });

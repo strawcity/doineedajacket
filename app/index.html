@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Weather based jacket suggestion">
+    <meta name="author" content="Erik Nilsson @ strawcitydesign.com">
 
     <title>Do I need a fucking jacket?</title>
 
@@ -69,11 +69,16 @@
                 </form>
             </div>
         </div>
-
-        <div class="temp-box">
-            <span id="temp-number">8</span>° <span id="temp-unit">C</span>
+        <div class="temp-card">
+            <div id="card-flipper">
+                <div class="temp-box front">
+                    <span id="temp-c-number"></span>° C
+                </div>
+                <div class="temp-box back">
+                    <span id="temp-f-number"></span>° F
+                </div>
+            </div>
         </div>
-
         <div class="row output">
             <div class="col-md-12">
                 <div class="suggestion">
@@ -88,6 +93,7 @@
     </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
