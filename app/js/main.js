@@ -49,7 +49,6 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
 
     switch (true) {
         case tempRange < 0:
-            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -65,7 +64,6 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0]<=3 && tempRange[0]>0:
-            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -82,7 +80,6 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0] <=10 && tempRange[0] >3:
-            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
@@ -98,7 +95,6 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0] <=15 && tempRange[0] >10:
-            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You should grab a light coat");
@@ -114,7 +110,6 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
 
         case tempRange[0] <=17 && tempRange[0] >15:
-            setTimeout(tweetLinkAnimation, 4000);
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
@@ -167,12 +162,18 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
 function tempBox(temp) {
     $('#temp-f-number').text(Math.round(temp * 9/5 + 32));
     $('#temp-c-number').text(Math.round(temp));
+    $('#mobile-temp-f-number').text(Math.round(temp * 9/5 + 32));
+    $('#mobile-temp-c-number').text(Math.round(temp));
 }
 
 function animateElements(){
     pageTitleAnimation();
     suggestionJacketAnimation();
     tempBoxAnimation();
+    mobileTempBoxAnimation();
+    // mobileTweetLinkAnimation();
+    setTimeout(tweetLinkAnimation, 4000);
+    setTimeout(mobileTweetLinkAnimation, 4000);
     $('#bg-gradient').animate({"opacity":"1"}, 300);
 };
 

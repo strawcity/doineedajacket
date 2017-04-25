@@ -7,7 +7,7 @@
       var titleSection = (document.querySelector('.suggestion'));
       var translateX = (document.querySelector('.body-container'));
       dynamics.animate(titleSection, {
-        translateX: 2030,
+        translateX: 2015,
       }, {
           type: dynamics.spring,
           duration: 1000,
@@ -28,6 +28,18 @@
       })
   };
 
+  function mobileTempBoxAnimation() {
+      var mobileTempBox = (document.querySelector('.temp-card-mobile'));
+      dynamics.animate(mobileTempBox, {
+        translateY: 210,
+      }, {
+          type: dynamics.spring,
+          duration: 1250,
+          frequency: 23,
+          friction: 207
+      })
+  };
+
   function tweetLinkAnimation() {
       var tweetLink = (document.querySelector('.tweet-link'));
       dynamics.animate(tweetLink, {
@@ -40,4 +52,17 @@
       })
   };
 
+  function mobileTweetLinkAnimation() {
+      var mobileTweetLink = (document.querySelector('.tweet-link-mobile'));
+      dynamics.animate(mobileTweetLink, {
+        opacity: 1,
+      }, {
+          type: dynamics.spring,
+          duration: 1250,
+          frequency: 23,
+          friction: 207
+      })
+  };
+
   $("#card-flipper").flip({trigger: 'click'});
+  $("#card-flipper-mobile").flip({trigger: 'click'});

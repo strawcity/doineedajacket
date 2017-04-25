@@ -56,16 +56,20 @@
         <div id="bg-gradient">
         </div>
         <div class="row">
-            <div class="title-section col-md-8 col-md-offset-2">
+            <div class="title-section col-md-8 col-md-offset-2 col-sm-12">
                 <span id="title-text">do I need a fucking jacket?</span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2" id="city-code">
                 <form class="submit-city-form">
-                    <h1 class="city-title">If I'm in</h1>
-                    <input class="city-input" type="text" autofocus="autofocus" placeholder="My city, USA"/>
-                    <button id="submit-city" class="button-styled" onclick="submitCity()">What the fuck do I need?</button>
+                    <h1 class="city-title col-md-12">If I'm in</h1>
+                    <div class="input-text-holder col-md-8 col-xs-12">
+                        <input class="city-input" type="text" autofocus="autofocus" placeholder="My city, USA"/>
+                    </div>
+                    <div class="input-button-holder col-md-4 col-xs-12">
+                        <button id="submit-city" class="button-styled" onclick="submitCity()">What the fuck do I need?</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -79,17 +83,35 @@
                 </div>
             </div>
         </div>
-        <div class="row output">
-            <div class="col-md-12">
-                <div class="suggestion">
-                      <h1 class="suggestion__jacket"></h1>
-                      <h4 class="suggestion__forecast"></h4>
+        <div class="row">
+            <div class="temp-card-mobile col-xs-12">
+                <div id="card-flipper-mobile">
+                    <div class="temp-box front">
+                        <span id="mobile-temp-c-number"></span>° C
+                    </div>
+                    <div class="temp-box back">
+                        <span id="mobile-temp-f-number"></span>° F
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="tweet-link">
-             <i class="fa fa-twitter" style="font-size:24px" target="_blank"></i><a href="http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.">Tell your friend to get a fucking jacket</a>
+        <div class="row output">
+            <div class="suggestion col-md-12 col-xs-10">
+                  <h1 class="suggestion__jacket"></h1>
+                  <h4 class="suggestion__forecast"></h4>
+            </div>
         </div>
+        <div class="row">
+            <div class="tweet-link-mobile col-xs-12">
+                <a href="http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so."><i class="fa fa-twitter" target="_blank"></i><br>
+                You can tell your friend to get a fucking jacket too.</a>
+            </div>
+        </div>
+        <div class="tweet-link">
+             <i class="fa fa-twitter" target="_blank"></i>
+             <a href="http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.">Tell your friend to get a fucking jacket</a>
+        </div>
+
     </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
