@@ -1,0 +1,101 @@
+//**
+// Responsive Styles
+//**
+
+
+
+@media screen and (min-width: $big-break) {
+    .title-section {
+        font-size: 70px;
+    }
+    .submit-city-form {
+        text-align: left;
+    }
+    .output {
+        .suggestion {
+            margin: 0;
+
+            &__jacket {
+                font-size: 170px;
+                line-height: 157px;
+                letter-spacing: -8px;
+            }
+            &__forecast {
+                font-size: 45px;
+            }
+        }
+    }
+    .temp-card,
+    .tweet-link {
+        display: block;
+    }
+    .temp-box {
+        font-size: 90px;
+    }
+    .temp-card-mobile,
+    .tweet-link-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: $small-break) and (max-width: $big-break) {
+    .output {
+        .suggestion {
+            margin: 0;
+
+            &__jacket {
+                font-size: 170px;
+                line-height: 157px;
+                letter-spacing: -8px;
+            }
+            &__forecast {
+                font-size: 45px;
+            }
+        }
+    }
+    .temp-card,
+    .tweet-link {
+        display: block;
+    }
+    .temp-card-mobile,
+    .tweet-link-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $small-break) {
+    .title-section {
+        font-size: 45px;
+    }
+    .submit-city-form,
+    .input-text-holder {
+        text-align: center;
+    }
+    .output {
+        .suggestion {
+            top: 80;
+            padding: 0;
+            &__jacket {
+                font-size: 80px;
+                line-height: 75px;
+                letter-spacing: -8px;
+            }
+            &__forecast {
+                font-size: 35px;
+            }
+        }
+    }
+    .temp-card,
+    .tweet-link {
+        display: none;
+    }
+    .temp-box {
+        font-size: 60px;
+    }
+    .temp-card-mobile,
+    .tweet-link-mobile {
+        display: block;
+        position: absolute;
+        top: -130px;
+    }
+}
