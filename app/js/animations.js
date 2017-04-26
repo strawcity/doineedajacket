@@ -29,7 +29,13 @@
   };
 
   function mobileTempBoxAnimation() {
+      var bgGradientHeight = $('#bg-gradient').height() + $('.suggestion__jacket').height();
       var mobileTempBox = (document.querySelector('.temp-card-mobile'));
+
+      $('#bg-gradient').css("height", bgGradientHeight);
+
+      console.log($('#bg-gradient').height());
+
       dynamics.animate(mobileTempBox, {
         translateY: 210,
       }, {

@@ -42,8 +42,6 @@
 @media screen and (max-width: 480px) {
   .title-section {
     font-size: 45px; }
-  .body-container {
-    height: 1000px; }
   .submit-city-form,
   .input-text-holder {
     text-align: center; }
