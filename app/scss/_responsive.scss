@@ -8,6 +8,9 @@
     .title-section {
         font-size: 70px;
     }
+    .body-container {
+        height: 100vh;
+    }
     .submit-city-form {
         text-align: left;
     }
@@ -67,6 +70,9 @@
     .title-section {
         font-size: 45px;
     }
+    .body-container {
+        height: 1000px;
+    }
     .submit-city-form,
     .input-text-holder {
         text-align: center;
@@ -78,7 +84,7 @@
             &__jacket {
                 font-size: 80px;
                 line-height: 75px;
-                letter-spacing: -8px;
+                letter-spacing: -4px;
             }
             &__forecast {
                 font-size: 35px;
