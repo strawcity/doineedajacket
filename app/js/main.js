@@ -166,15 +166,21 @@ function tempBox(temp) {
     $('#mobile-temp-c-number').text(Math.round(temp));
 }
 
+function postCityName(city) {
+    $('#city-append').text(' in ' + city);
+    $('#tweet-url').attr('href', 'http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20in%20' + city + '%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.')
+}
+
 function animateElements(){
     pageTitleAnimation();
     suggestionJacketAnimation();
     tempBoxAnimation();
     mobileTempBoxAnimation();
-    // mobileTweetLinkAnimation();
-    setTimeout(tweetLinkAnimation, 4000);
-    setTimeout(mobileTweetLinkAnimation, 4000);
+    mobileTweetLinkAnimation();
+    setTimeout(tweetLinkAnimation, 2000);
+    setTimeout(mobileTweetLinkAnimation, 2000);
     $('#bg-gradient').animate({"opacity":"1"}, 300);
+    $('#bg-gradient-mobile').animate({"opacity":"1"}, 300);
 };
 
 function getWeatherCityName(city) {
@@ -197,6 +203,7 @@ function getWeatherCityName(city) {
                 }
           });
           thisIsWhat(tempRange, windRange, forecasts);
+          postCityName(city);
         }
     });
 }
@@ -220,10 +227,37 @@ function getWeatherLatLon(lat, lon) {
                     windRange.push(item.wind.speed);
                 }
           });
+          getAddress (lat, lon);
           thisIsWhat(tempRange, windRange, forecasts);
         }
     });
 }
+
+function getAddress (latitude, longitude) {
+    return new Promise(function (resolve, reject) {
+        var request = new XMLHttpRequest();
+
+        var method = 'GET';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
+        var async = true;
+
+        request.open(method, url, async);
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    var data = JSON.parse(request.responseText);
+                    var address = data.results[0];
+                    resolve(address);
+                    postCityName(address.address_components[4].long_name);
+                }
+                else {
+                    reject(request.status);
+                }
+            }
+        };
+        request.send();
+    });
+};
 
 $(document).ready(function() {
     getLocation();

@@ -29,9 +29,13 @@
   };
 
   function mobileTempBoxAnimation() {
+      var offsetHeight =  $('#bg-gradient-mobile').height() + $('.temp-card').height()  + $('.tweet-link-mobile').height() + 60;
       var mobileTempBox = (document.querySelector('.temp-card-mobile'));
+
+      $('#bg-gradient-mobile').css("height", offsetHeight);
+
       dynamics.animate(mobileTempBox, {
-        translateY: 210,
+        translateY: 230,
       }, {
           type: dynamics.spring,
           duration: 1250,
