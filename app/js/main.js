@@ -212,15 +212,28 @@ function animateElements(){
 };
 
 function getWeatherCityName(city) {
-    var geocoder =  new google.maps.Geocoder();
-    geocoder.geocode( { 'address': city }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            getWeatherLatLon(results[0].geometry.location.lat().toFixed(2), results[0].geometry.location.lng().toFixed(2))
-        } else {
-            alert("Something got wrong. Maybe add the country code?");
-        }
+    return new Promise(function (resolve, reject) {
+        var request = new XMLHttpRequest();
+        var method = 'GET';
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=AIzaSyD5Zl8P8cofRfy5d_rvfYWSs6ptXnLBUiE';
+        var async = true;
+
+        request.open(method, url, async);
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    var data = JSON.parse(request.responseText);
+                    getWeatherLatLon(data.results[0].geometry.bounds.northeast.lat.toFixed(2), data.results[0].geometry.bounds.northeast.lng.toFixed(2))
+                }
+                else {
+                    reject(request.status);
+                }
+            }
+        };
+        request.send();
     });
 }
+
 
 function getWeatherLatLon(lat, lon) {
     var key = "c254108b1bb34c0524d145ad1a99d5a2",
@@ -248,7 +261,7 @@ function getAddress (latitude, longitude) {
     return new Promise(function (resolve, reject) {
         var request = new XMLHttpRequest();
         var method = 'GET';
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyB0XLZYku9IeIhegJlIegWtZmuq0dgYX5w';
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyD5Zl8P8cofRfy5d_rvfYWSs6ptXnLBUiE';
         var async = true;
 
         request.open(method, url, async);
