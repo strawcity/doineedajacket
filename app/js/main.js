@@ -29,26 +29,26 @@ function submitCity() {
     event.preventDefault();
 }
 
-function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
+function thisIsWhat(tempHigh, windRange, forecasts){
     var drizzle,
+        cloudy,
         rain,
         hour;
 
-    $.each(forecasts, function (hour, forecast) {
-        if (forecast.includes("rain") && !forecast.includes("light")) {
-            rain = true;
-        } else if (forecast.includes("rain") && forecast.includes("light")) {
-            drizzle = true;
-        } else if (forecast.includes("drizzle")) {
-            drizzle = true;
-        }
-    });
+    if (forecasts.includes("rain") && !forecasts.includes("light")) {
+        rain = true;
+    } else if (forecasts.includes("rain") && forecasts.includes("light")) {
+        drizzle = true;
+    } else if (forecasts.includes("cloudy")) {
+        cloudy = true;
+    } else if (forecasts.includes("drizzle") || forecasts.includes("Drizzle")) {
+        drizzle = true;
+    }
 
-    Math.max.apply(Math,tempRange);
-    Math.max.apply(Math,windRange);
+    console.log(drizzle);
 
     switch (true) {
-        case tempRange < 0:
+        case tempHigh < 0:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -58,12 +58,17 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
                     $('.suggestion__forecast').text("bit'a flurry here and there");
                     break;
+                case cloudy:
+                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
+                    $('.suggestion__forecast').text("bit'a flurry here and there");
+                    break;
                 default:
-                    //console.log('no rain');
+                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
+                    $('.suggestion__forecast').text("it's gonna be cold...and dark...and it's gonna last forever.");
             }
             break;
 
-        case tempRange[0]<=3 && tempRange[0]>0:
+        case tempHigh<=3 && tempHigh>0:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
@@ -73,13 +78,17 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
                     $('.suggestion__forecast').text("could sprinkle a bit");
                     break;
+                case cloudy:
+                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
+                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    break;
                 default:
                     $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("it's gonna be cold. and dark.");
+                    $('.suggestion__forecast').text("it's gonna be cold and...dark.");
             }
             break;
 
-        case tempRange[0] <=10 && tempRange[0] >3:
+        case tempHigh <=10 && tempHigh >3:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
@@ -88,13 +97,18 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                 case drizzle:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
+                    break;
+                case cloudy:
+                    $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
+                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    break;
                 default:
                     $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
-        case tempRange[0] <=15 && tempRange[0] >10:
+        case tempHigh <=15 && tempHigh >10:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You should grab a light coat");
@@ -103,13 +117,18 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                 case drizzle:
                     $('.suggestion__jacket').text("You should grab a light coat");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
+                    break;
+                case cloudy:
+                    $('.suggestion__jacket').text("You should grab a light coat");
+                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    break;
                 default:
                     $('.suggestion__jacket').text("You should grab a light coat");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
-        case tempRange[0] <=17 && tempRange[0] >15:
+        case tempHigh <=17 && tempHigh >15:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
@@ -118,13 +137,18 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                 case drizzle:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
+                    break;
+                case cloudy:
+                    $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
+                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    break;
                 default:
                     $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
-        case tempRange[0] <=20 && tempRange[0] >17:
+        case tempHigh <=20 && tempHigh >17:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("Could just grab a hoodie for later");
@@ -133,13 +157,18 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                 case drizzle:
                     $('.suggestion__jacket').text("Could just grab a hoodie for later");
                     $('.suggestion__forecast').text("but peep the possible drizzle");
+                    break;
+                case cloudy:
+                    $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    break;
                 default:
                     $('.suggestion__jacket').text("Could just grab a hoodie for later");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
 
-        case tempRange[0] >25:
+        case tempHigh >25:
             switch (true) {
                 case rain:
                     $('.suggestion__jacket').text("You kidding? Fuck a jacket!");
@@ -148,6 +177,7 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
                 case drizzle:
                     $('.suggestion__jacket').text("You kidding? Fuck a jacket!");
                     $('.suggestion__forecast').text("but peep the possible drizzle");
+                    break;
                 default:
                     $('.suggestion__jacket').text("You kidding? Fuck a jacket!");
                     $('.suggestion__forecast').text("and you could grab some shades");
@@ -155,10 +185,10 @@ function thisIsWhat(tempRange, windRange, forecasts, useFahrenheit){
             break;
     }
 
-    tempBox(tempRange[0], useFahrenheit);
+    tempBox(tempHigh);
     animateElements();
 }
-
+// Deduct 32, then multiply by 5, then divide by 9
 function tempBox(temp) {
     $('#temp-f-number').text(Math.round(temp * 9/5 + 32));
     $('#temp-c-number').text(Math.round(temp));
@@ -184,35 +214,23 @@ function animateElements(){
 };
 
 function getWeatherCityName(city) {
-    var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
-        tempRange = [],
-        forecasts = [],
-        windRange = [];
-    $.ajax({
-       type: "GET",
-       dataType: "jsonp",
-       jsonp: "callback", jsonpCallback: "callback",
-       url: locationAPI,
-       cache: false,
-       success: function (data) {
-            $.each(data.list, function (i, item) {
-                if (i <= 5) {
-                    tempRange.push(item.main.temp);
-                    forecasts.push(item.weather[0].description);
-                    windRange.push(item.wind.speed);
-                }
-          });
-          thisIsWhat(tempRange, windRange, forecasts);
-          postCityName(city);
+    var geocoder =  new google.maps.Geocoder();
+    geocoder.geocode( { 'address': city }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            getWeatherLatLon(results[0].geometry.location.lat().toFixed(2), results[0].geometry.location.lng().toFixed(2))
+        } else {
+            alert("Something got wrong. Maybe add the country code?");
         }
     });
 }
 
 function getWeatherLatLon(lat, lon) {
-    var locationAPI = "http:///api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=5cef660da7c7763ee744868bd0d3327d",
-        tempRange = [],
-        forecasts = [],
-        windRange = [];
+    var key = "c254108b1bb34c0524d145ad1a99d5a2",
+        // locationAPI = "https://api.darksky.net/forecast/c254108b1bb34c0524d145ad1a99d5a2/37.8267,-122.4233",
+        locationAPI = "https://api.darksky.net/forecast/c254108b1bb34c0524d145ad1a99d5a2/" + lat + "," + lon,
+        tempHigh,
+        forecasts,
+        windRange;
     $.ajax({
        type: "GET",
        dataType: "jsonp",
@@ -220,15 +238,11 @@ function getWeatherLatLon(lat, lon) {
        url: locationAPI,
        cache: false,
        success: function (data) {
-            $.each(data.list, function (i, item) {
-                if (i <= 5) {
-                    tempRange.push(item.main.temp);
-                    forecasts.push(item.weather[0].description);
-                    windRange.push(item.wind.speed);
-                }
-          });
-          getAddress (lat, lon);
-          thisIsWhat(tempRange, windRange, forecasts);
+           tempHigh = (data.daily.data[0].temperatureMax - 32) * 5/9;
+           windRange = data.daily.data[0].windSpeed;
+           forecasts = data.daily.data[0].summary;
+           getAddress (lat, lon);
+           thisIsWhat(tempHigh, windRange, forecasts);
         }
     });
 }
@@ -238,7 +252,7 @@ function getAddress (latitude, longitude) {
         var request = new XMLHttpRequest();
 
         var method = 'GET';
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyB0XLZYku9IeIhegJlIegWtZmuq0dgYX5w';
         var async = true;
 
         request.open(method, url, async);
