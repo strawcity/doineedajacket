@@ -129,19 +129,19 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh <=17 && tempHigh >15:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
                     $('.suggestion__forecast').text("and it could piss down rain");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
                     $('.suggestion__forecast').text("and the sun is gonna hide");
                     break;
                 default:
-                    $('.suggestion__jacket').text("Eeehhhh....you could grab a coat");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
@@ -149,22 +149,42 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh <=20 && tempHigh >17:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                    $('.suggestion__jacket').text("Could just grab a light coat for later");
                     $('.suggestion__forecast').text("but grab an umbrella");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                    $('.suggestion__jacket').text("Could just grab a light coat for later");
                     $('.suggestion__forecast').text("but peep the possible drizzle");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                    $('.suggestion__jacket').text("Could just grab a light coat for later");
                     $('.suggestion__forecast').text("and the sun is gonna hide");
                     break;
                 default:
-                    $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                    $('.suggestion__jacket').text("Could just grab a light coat for later");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
+
+            case tempHigh <=25 && tempHigh >20:
+                switch (true) {
+                    case rain:
+                        $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                        $('.suggestion__forecast').text("but grab an umbrella");
+                        break;
+                    case drizzle:
+                        $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                        $('.suggestion__forecast').text("but peep the possible drizzle");
+                        break;
+                    case cloudy:
+                        $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                        $('.suggestion__forecast').text("and the sun is gonna hide");
+                        break;
+                    default:
+                        $('.suggestion__jacket').text("Could just grab a hoodie for later");
+                        $('.suggestion__forecast').text("and you could grab some shades");
+                }
+                break;
 
         case tempHigh >25:
             switch (true) {
@@ -251,7 +271,8 @@ function getWeatherLatLon(lat, lon) {
            tempHigh = (data.daily.data[0].temperatureMax - 32) * 5/9;
            windRange = data.daily.data[0].windSpeed;
            forecasts = data.daily.data[0].summary;
-           getAddress (lat, lon);
+           console.log(tempHigh);
+           getAddress(lat, lon);
            thisIsWhat(tempHigh, windRange, forecasts);
         }
     });
