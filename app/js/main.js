@@ -45,8 +45,6 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         drizzle = true;
     }
 
-    console.log(drizzle);
-
     switch (true) {
         case tempHigh < 0:
             switch (true) {
@@ -226,7 +224,6 @@ function getWeatherCityName(city) {
 
 function getWeatherLatLon(lat, lon) {
     var key = "c254108b1bb34c0524d145ad1a99d5a2",
-        // locationAPI = "https://api.darksky.net/forecast/c254108b1bb34c0524d145ad1a99d5a2/37.8267,-122.4233",
         locationAPI = "https://api.darksky.net/forecast/c254108b1bb34c0524d145ad1a99d5a2/" + lat + "," + lon,
         tempHigh,
         forecasts,
@@ -250,7 +247,6 @@ function getWeatherLatLon(lat, lon) {
 function getAddress (latitude, longitude) {
     return new Promise(function (resolve, reject) {
         var request = new XMLHttpRequest();
-
         var method = 'GET';
         var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyB0XLZYku9IeIhegJlIegWtZmuq0dgYX5w';
         var async = true;
