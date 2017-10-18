@@ -257,7 +257,7 @@ function getWeatherCityName(city) {
 
 function getWeatherLatLon(lat, lon) {
     var key = "c254108b1bb34c0524d145ad1a99d5a2",
-        locationAPI = "https://api.darksky.net/forecast/c254108b1bb34c0524d145ad1a99d5a2/" + lat + "," + lon,
+        locationAPI = "https://api.darksky.net/forecast/" + [API_KEY] + "/" + lat + "," + lon,
         tempHigh,
         forecasts,
         windRange;
