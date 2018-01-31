@@ -19,6 +19,7 @@
     "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
+    "gulp-cssnano": "^2.1.2",
     "node-accuweather": "^1.7.0"
   }
 }
