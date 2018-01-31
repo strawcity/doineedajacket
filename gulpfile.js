@@ -27,7 +27,17 @@ gulp.task('uglify', function(){
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+})
+
+gulp.task('compress', function(){
+  return gulp.src('app/js/**/*.js')
+    .pipe(useref())
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
