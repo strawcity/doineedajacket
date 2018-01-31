@@ -1,6 +1,11 @@
+  function pageInitAnimation() {
+      $('.loader').animate({opacity: 1}, 'slow');
+  };
+
   function pageTitleAnimation() {
-      var titleSection = (document.querySelector('.title-section'));
+      var titleSection = $('.title-section');
       $('.title-section').addClass('minified');
+      $('.loader').fadeOut();
   };
 
   function suggestionJacketAnimation() {

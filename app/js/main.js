@@ -257,7 +257,7 @@ function getWeatherCityName(city) {
 
 function getWeatherLatLon(lat, lon) {
     var key = "c254108b1bb34c0524d145ad1a99d5a2",
-        locationAPI = "https://api.darksky.net/forecast/" + [API_KEY] + "/" + lat + "," + lon,
+        locationAPI = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lon,
         tempHigh,
         forecasts,
         windRange;
@@ -271,7 +271,6 @@ function getWeatherLatLon(lat, lon) {
            tempHigh = (data.daily.data[0].temperatureMax - 32) * 5/9;
            windRange = data.daily.data[0].windSpeed;
            forecasts = data.daily.data[0].summary;
-           console.log(tempHigh);
            getAddress(lat, lon);
            thisIsWhat(tempHigh, windRange, forecasts);
         }
@@ -304,5 +303,6 @@ function getAddress (latitude, longitude) {
 };
 
 $(document).ready(function() {
+    pageInitAnimation();
     getLocation();
 });

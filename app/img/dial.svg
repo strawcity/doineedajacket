@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="346px" height="273px" viewBox="0 0 346 273" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>dial</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dial" transform="translate(3.000000, 3.000000)">
+            <rect id="Rectangle-Copy-5" stroke="#FFFFFF" stroke-width="3" transform="translate(65.000000, 193.500000) rotate(45.000000) translate(-65.000000, -193.500000) " x="37.5" y="192.5" width="55" height="2" rx="1"></rect>
+            <path d="M26.2607422,193.625977 L102.615723,193.625977 C102.021812,198.090529 101.628095,201.460158 101.43457,203.734863 C101.241046,206.009569 99.0867492,209.750292 94.9716797,214.957031 C91.9453956,219.284379 89.2818213,222.303748 86.980957,224.015137 C84.6800927,225.726526 80.4234195,227.854455 74.2109375,230.398926 C68.2181281,231.225098 64.0563589,231.638184 61.7256297,231.638184 C59.3949005,231.638184 55.309274,230.428874 49.46875,228.010254 C42.7761906,224.156805 38.2325708,221.116115 35.8378906,218.888184 C33.4432105,216.660253 31.0750464,212.673436 28.7333984,206.927734 L26.2607422,193.625977 Z" id="Path-3" fill="#FFFFFF"></path>
+            <circle id="Oval" stroke="#FFFFFF" stroke-width="3" cx="64.5" cy="193.5" r="38"></circle>
+            <rect id="Rectangle-2-Copy-2" stroke="none" stroke-width="3" x="-1.5" y="-1.5" width="343" height="270"></rect>
+        </g>
+    </g>
+</svg>

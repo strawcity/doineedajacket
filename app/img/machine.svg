@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="342px" height="269px" viewBox="0 0 342 269" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>machine</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="machine" transform="translate(0.000000, 1.000000)">
+            <path d="M23.9354117,1.50390625 L97.9797362,87.2480598 L97.9797362,121.960281 L2.1318141,121.960281 L2.1318141,265.332083 L278.363324,265.332083 L278.363324,121.894537 L188.835938,121.894537 L188.835938,86.1976421 L263.367834,1.50390625 L23.9354117,1.50390625 Z" id="Path" stroke="#FFFFFF" stroke-width="3"></path>
+            <path d="M98,122 L188,122" id="Path-2-Copy" stroke="#FFFFFF" stroke-width="3"></path>
+            <path d="M98,87 L189,87" id="Path-2-Copy-2" stroke="#FFFFFF" stroke-width="3"></path>
+            <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="3" cx="235.5" cy="172.5" r="17"></circle>
+            <circle id="Oval-Copy-2" stroke="#FFFFFF" stroke-width="3" cx="235.5" cy="216.5" r="17"></circle>
+            <rect id="Rectangle" stroke="#FFFFFF" stroke-width="3" x="130.5" y="155.5" width="58" height="6" rx="3"></rect>
+            <rect id="Rectangle-Copy" stroke="#FFFFFF" stroke-width="3" x="130.5" y="173.25" width="58" height="6" rx="3"></rect>
+            <rect id="Rectangle-Copy-2" stroke="#FFFFFF" stroke-width="3" x="130.5" y="191" width="58" height="6" rx="3"></rect>
+            <rect id="Rectangle-Copy-3" stroke="#FFFFFF" stroke-width="3" x="130.5" y="208.75" width="58" height="6" rx="3"></rect>
+            <rect id="Rectangle-Copy-4" stroke="#FFFFFF" stroke-width="3" x="130.5" y="226.5" width="58" height="6" rx="3"></rect>
+            <rect id="Rectangle-2" stroke="#FFFFFF" stroke-width="3" x="278.5" y="158.5" width="39" height="70"></rect>
+            <rect id="bouindingbox" stroke="none" x="0.5" y="-0.5" width="341" height="268"></rect>
+            <rect id="Rectangle-2-Copy" stroke="#FFFFFF" stroke-width="3" x="317.5" y="171.5" width="22" height="44"></rect>
+        </g>
+    </g>
+</svg>

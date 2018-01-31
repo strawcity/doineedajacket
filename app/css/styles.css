@@ -103,10 +103,13 @@ body {
   margin: 0; }
 
 .title-section {
-  font-family: "butler_stencilregular";
+  font-family: "butlerbold";
   text-align: center;
   margin-top: 20vh;
+  opacity: 1;
   color: #9012FE; }
+  .title-section #title-text {
+    width: 100%; }
   .title-section.minified {
     margin: 30px;
     padding: 0;
@@ -116,6 +119,50 @@ body {
     -webkit-transition: all ease 1s;
     /* Safari */
     transition: all ease 1s; }
+  .title-section .loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 9rem;
+    margin: 0 auto;
+    top: 40vh;
+    opacity: 0; }
+    .title-section .loader:before, .title-section .loader:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      animation-duration: 1.8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      filter: drop-shadow(0 0 0.44444rem rgba(144, 18, 254, 0.75)); }
+    .title-section .loader:before {
+      width: 100%;
+      padding-bottom: 100%;
+      box-shadow: inset 0 0 0 1rem #9012FE;
+      animation-name: pulsA; }
+    .title-section .loader:after {
+      width: calc(100% - 1rem*2);
+      padding-bottom: calc(100% - 1rem*2);
+      box-shadow: 0 0 0 0 #9012FE;
+      animation-name: pulsB; }
+
+@keyframes pulsA {
+  0% {
+    box-shadow: inset 0 0 0 1rem #9012FE;
+    opacity: 1; }
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 #9012FE;
+    opacity: 0.6; } }
+
+@keyframes pulsB {
+  0%, 50% {
+    box-shadow: 0 0 0 0 #9012FE;
+    opacity: 0.6; }
+  100% {
+    box-shadow: 0 0 0 1rem #9012FE;
+    opacity: 1; } }
 
 .submit-city-form {
   margin: 0 auto; }
