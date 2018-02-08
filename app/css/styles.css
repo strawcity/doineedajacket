@@ -61,7 +61,7 @@ body {
   .title-section #loading-center-absolute {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 75%;
     height: 50px;
     width: 50px;
     margin-top: -25px;
@@ -74,27 +74,27 @@ body {
     animation: animate 2s infinite;
     position: absolute;
     top: 0px;
-    right: -200px; }
+    right: -100px; }
 
 @-webkit-keyframes animate {
   50% {
-    -ms-transform: translate(-400px, 0) rotate(-360deg);
-    -webkit-transform: translate(-400px, 0) rotate(-360deg);
-    transform: translate(-400px, 0) rotate(-360deg); }
+    -ms-transform: translate(-200px, 0) rotate(-180deg);
+    -webkit-transform: translate(-200px, 0) rotate(-180deg);
+    transform: translate(-200px, 0) rotate(-180deg); }
   100% {
-    -ms-transform: translate(0, 0) rotate(360deg);
-    -webkit-transform: translate(0, 0) rotate(360deg);
-    transform: translate(0, 0) rotate(360deg); } }
+    -ms-transform: translate(0, 0) rotate(180deg);
+    -webkit-transform: translate(0, 0) rotate(180deg);
+    transform: translate(0, 0) rotate(180deg); } }
 
 @keyframes animate {
   50% {
-    -ms-transform: translate(-400px, 0) rotate(-360deg);
-    -webkit-transform: translate(-400px, 0) rotate(-360deg);
-    transform: translate(-400px, 0) rotate(-360deg); }
+    -ms-transform: translate(-200px, 0) rotate(-180deg);
+    -webkit-transform: translate(-200px, 0) rotate(-180deg);
+    transform: translate(-200px, 0) rotate(-180deg); }
   100% {
-    -ms-transform: translate(0, 0) rotate(360deg);
-    -webkit-transform: translate(0, 0) rotate(360deg);
-    transform: translate(0, 0) rotate(360deg); } }
+    -ms-transform: translate(0, 0) rotate(180deg);
+    -webkit-transform: translate(0, 0) rotate(180deg);
+    transform: translate(0, 0) rotate(180deg); } }
 
 .submit-city-form {
   margin: 0 auto; }
@@ -301,7 +301,7 @@ body {
       padding: 0;
       width: 95%; }
       .output .suggestion__jacket {
-        font-size: 78px;
+        font-size: 75px;
         line-height: 69px;
         letter-spacing: -4px; }
       .output .suggestion__forecast {

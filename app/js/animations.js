@@ -24,7 +24,7 @@
   function tempBoxAnimation() {
       var tempBox = (document.querySelector('.temp-card'));
       dynamics.animate(tempBox, {
-        translateX: -335,
+        translateX: -367,
       }, {
           type: dynamics.spring,
           duration: 1250,

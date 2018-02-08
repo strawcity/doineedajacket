@@ -305,5 +305,5 @@ function getAddress (latitude, longitude) {
 
 $(document).ready(function() {
     pageInitAnimation();
-    getLocation();
+    // getLocation();
 });
