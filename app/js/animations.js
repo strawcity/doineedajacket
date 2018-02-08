@@ -5,12 +5,13 @@
   function pageTitleAnimation() {
       var titleSection = $('.title-section');
       $('.title-section').addClass('minified');
-      $('#loading').fadeOut();
+      $('#loading').hide();
   };
 
   function suggestionJacketAnimation() {
       var titleSection = (document.querySelector('.suggestion'));
       var translateX = (document.querySelector('.body-container'));
+      $('#intro-quesiton-mark').show();
       dynamics.animate(titleSection, {
         translateX: 2000,
       }, {

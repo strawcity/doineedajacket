@@ -7,6 +7,7 @@
 @media screen and (min-width: $big-break) {
     .title-section {
         font-size: 70px;
+        width: 100%;
     }
     .body-container {
         height: 100vh;
@@ -74,18 +75,49 @@
 
 @media screen and (max-width: $small-break) {
     .title-section {
-        font-size: 45px;
+      padding: 30px;
+      font-size: 45px;
         &.minified {
           width: 100%;
           padding: 30px 15px;
           margin: 0;
         }
+      .city-title {
+        font-size: 45px;
+      }
+      .city-input {
+        width: 100%;
+        font-size: 45px;
+        margin-top: 0;
+        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            font-size: 45px;
+            text-align: center;
+        }
+
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+           font-size: 45px;
+           text-align: center;
+        }
+
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+           font-size: 45px;
+           text-align: center;
+        }
+
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+           font-size: 45px;
+           text-align: center;
+        }
+      }
     }
     #bg-gradient {
         display: none;
     }
     #bg-gradient-mobile {
         display: block;
+    }
+    #loading-center-absolute {
+    	top: 75%;
     }
     .submit-city-form,
     .input-text-holder {

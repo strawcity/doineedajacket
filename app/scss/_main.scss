@@ -44,10 +44,7 @@ body {
     padding: 0;
     opacity: 1;
     color: $purple;
-
-    #title-text {
-      width: 100%;
-    }
+    font-size: 70px;
 
     &.minified {
         margin: 30px;
@@ -75,7 +72,7 @@ body {
     #loading-center-absolute {
     	position: absolute;
     	left: 50%;
-    	top: 75%;
+    	top: 50%;
     	height: 50px;
     	width: 50px;
     	margin-top: -25px;
@@ -130,12 +127,13 @@ body {
 
 .submit-city-form {
     margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
     .city-title {
         font-weight: 300;
         margin: 30px 0 5px 0;
-        font-size: 16px;
-        font-family: Helvetica, Arial;
-        text-transform: uppercase;
+        font-size: 70px;
+        font-family: $butler;
         letter-spacing: 1px;
     }
 }
@@ -146,14 +144,14 @@ body {
 
 .button-styled {
     display: block;
-    float: right;
     background: none;
-    color: $purple;
+    color: #9012FE;
     font-size: 16px;
     padding: 9px 16px;
-    font-family: $butler;
-    border: $purple 1px solid;
-    width: 100%;
+    font-family: "butlerbold";
+    border: #9012FE 1px solid;
+    width: 300px;
+    margin: 0 auto;
 
     &:focus {
         outline: 0;
@@ -161,15 +159,16 @@ body {
 }
 
 .city-input {
-    font-family: $typewriter;
+    font-family: $butler;
     border-top: none;
     border-left: none;
     border-right: none;
     background: none;
     border-bottom: 1px solid $purple;
-    font-size: 25px;
+    font-size: 70px;
+    line-height: 10px;
     font-weight: 900;
-    width: 100%;
+    width: 60%;
     margin-top: 4px;
     margin-bottom: 20px;
 
@@ -178,25 +177,26 @@ body {
     }
 
     &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-        color: #333;
-        font-family: $typewriter;
+        color: $purple;
+        opacity:  0.4;
+        font-family: $butler;
     }
 
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-       color: #333;
+       color: $purple;
        opacity:  1;
-       font-family: $typewriter;
+       font-family: $butler;
     }
 
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-       color:    #333;
+       color: $purple;
        opacity:  1;
-       font-family: $typewriter;
+       font-family: $butler;
     }
 
     &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-       color:    #333;
-       font-family: $typewriter;
+       color: $purple;
+       font-family: $butler;
     }
 }
 

@@ -35,9 +35,8 @@ body {
   margin-top: 20vh;
   padding: 0;
   opacity: 1;
-  color: #9012FE; }
-  .title-section #title-text {
-    width: 100%; }
+  color: #9012FE;
+  font-size: 70px; }
   .title-section.minified {
     margin: 30px;
     padding: 0;
@@ -61,7 +60,7 @@ body {
   .title-section #loading-center-absolute {
     position: absolute;
     left: 50%;
-    top: 75%;
+    top: 50%;
     height: 50px;
     width: 50px;
     margin-top: -25px;
@@ -97,13 +96,14 @@ body {
     transform: translate(0, 0) rotate(180deg); } }
 
 .submit-city-form {
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px; }
   .submit-city-form .city-title {
     font-weight: 300;
     margin: 30px 0 5px 0;
-    font-size: 16px;
-    font-family: Helvetica, Arial;
-    text-transform: uppercase;
+    font-size: 70px;
+    font-family: "butlerbold";
     letter-spacing: 1px; }
 
 #city-code {
@@ -111,49 +111,51 @@ body {
 
 .button-styled {
   display: block;
-  float: right;
   background: none;
   color: #9012FE;
   font-size: 16px;
   padding: 9px 16px;
   font-family: "butlerbold";
   border: #9012FE 1px solid;
-  width: 100%; }
+  width: 300px;
+  margin: 0 auto; }
   .button-styled:focus {
     outline: 0; }
 
 .city-input {
-  font-family: "Special Elite", cursive;
+  font-family: "butlerbold";
   border-top: none;
   border-left: none;
   border-right: none;
   background: none;
   border-bottom: 1px solid #9012FE;
-  font-size: 25px;
+  font-size: 70px;
+  line-height: 10px;
   font-weight: 900;
-  width: 100%;
+  width: 60%;
   margin-top: 4px;
   margin-bottom: 20px; }
   .city-input:focus {
     outline: 0; }
   .city-input::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
-    color: #333;
-    font-family: "Special Elite", cursive; }
+    color: #9012FE;
+    opacity: 0.4;
+    font-family: "butlerbold"; }
   .city-input:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: #333;
+    color: #9012FE;
     opacity: 1;
-    font-family: "Special Elite", cursive; }
+    font-family: "butlerbold"; }
   .city-input::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: #333;
+    color: #9012FE;
     opacity: 1;
-    font-family: "Special Elite", cursive; }
+    font-family: "butlerbold"; }
   .city-input:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: #333;
-    font-family: "Special Elite", cursive; }
+    color: #9012FE;
+    font-family: "butlerbold"; }
 
 .temp-card {
   position: fixed;
@@ -238,7 +240,8 @@ body {
 
 @media screen and (min-width: 780px) {
   .title-section {
-    font-size: 70px; }
+    font-size: 70px;
+    width: 100%; }
   .body-container {
     height: 100vh; }
   #bg-gradient {
@@ -282,15 +285,40 @@ body {
 
 @media screen and (max-width: 480px) {
   .title-section {
+    padding: 30px;
     font-size: 45px; }
     .title-section.minified {
       width: 100%;
       padding: 30px 15px;
       margin: 0; }
+    .title-section .city-title {
+      font-size: 45px; }
+    .title-section .city-input {
+      width: 100%;
+      font-size: 45px;
+      margin-top: 0; }
+      .title-section .city-input::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        font-size: 45px;
+        text-align: center; }
+      .title-section .city-input:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        font-size: 45px;
+        text-align: center; }
+      .title-section .city-input::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        font-size: 45px;
+        text-align: center; }
+      .title-section .city-input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 45px;
+        text-align: center; }
   #bg-gradient {
     display: none; }
   #bg-gradient-mobile {
     display: block; }
+  #loading-center-absolute {
+    top: 75%; }
   .submit-city-form,
   .input-text-holder {
     text-align: center; }

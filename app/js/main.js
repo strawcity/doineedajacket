@@ -10,9 +10,13 @@ function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
             $('#city-code').show();
+            $('#intro-quesiton-mark').hide();
+            $('#loading').hide();
             break;
         case error.POSITION_UNAVAILABLE:
             $('#city-code').show();
+            $('#intro-quesiton-mark').hide();
+            $('#loading').hide();
             break;
         case error.TIMEOUT:
             break;
@@ -21,10 +25,17 @@ function showError(error) {
     }
 }
 
+$("#s").keypress(function(e) {
+    if(e.which == 13) {
+        submitCity();
+    }
+});
+
 function submitCity() {
     if ($( "input:first" ).val()) {
         getWeatherCityName($( "input:first" ).val());
-        $('.submit-city-form').fadeOut('fast');
+        $('.submit-city-form').fadeOut();
+        $('#loading').fadeIn();
     }
     event.preventDefault();
 }
@@ -141,7 +152,7 @@ function thisIsWhat(tempHigh, windRange, forecasts){
                     $('.suggestion__forecast').text("cause the clouds will block the sun");
                     break;
                 default:
-                    $('.suggestion__jacket').text("Eeehhhh....you should grab a light jacket");
+                    $('.suggestion__jacket').text("Eeehhhh....you should take a light jacket");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
@@ -149,8 +160,8 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh <=20 && tempHigh >17:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Could just grab a light jacket for later");
-                    $('.suggestion__forecast').text("but grab an umbrella");
+                    $('.suggestion__jacket').text("Go with the raincoat");
+                    $('.suggestion__forecast').text("and grab an umbrella");
                     break;
                 case drizzle:
                     $('.suggestion__jacket').text("Could just grab a light jacket for later");
@@ -197,8 +208,8 @@ function thisIsWhat(tempHigh, windRange, forecasts){
                     $('.suggestion__forecast').text("but peep the possible drizzle");
                     break;
                 default:
-                    $('.suggestion__jacket').text("You kidding? Fuck a jacket!");
-                    $('.suggestion__forecast').text("and you could grab some shades");
+                    $('.suggestion__jacket').text("Fuck a jacket!");
+                    $('.suggestion__forecast').text("you're showing up a popcicle and a gift card");
             }
             break;
     }
@@ -215,7 +226,6 @@ function tempBox(temp) {
 }
 
 function postCityName(city) {
-    // $('#city-append').text(' in aölksdj ölaskdjdlösj ');
     $('#city-append').text(' in ' + city);
     $('#tweet-url').attr('href', 'http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20in%20' + city + '%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.')
 }
@@ -239,14 +249,17 @@ function getWeatherCityName(city) {
         var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=AIzaSyD5Zl8P8cofRfy5d_rvfYWSs6ptXnLBUiE';
         var async = true;
 
+        console.log(url);
+
         request.open(method, url, async);
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
                 if (request.status == 200) {
                     var data = JSON.parse(request.responseText);
-                    getWeatherLatLon(data.results[0].geometry.bounds.northeast.lat.toFixed(2), data.results[0].geometry.bounds.northeast.lng.toFixed(2))
+                    getWeatherLatLon(data.results[0].geometry.location.lat.toFixed(2), data.results[0].geometry.location.lng.toFixed(2))
                 }
                 else {
+                    console.log('what');
                     reject(request.status);
                 }
             }
@@ -305,5 +318,5 @@ function getAddress (latitude, longitude) {
 
 $(document).ready(function() {
     pageInitAnimation();
-    // getLocation();
+    getLocation();
 });
