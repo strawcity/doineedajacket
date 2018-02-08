@@ -1,11 +1,88 @@
 @import url("https://fonts.googleapis.com/css?family=Special+Elite");
+@media screen and (min-width: 780px) {
+  .title-section {
+    font-size: 70px; }
+  .body-container {
+    height: 100vh; }
+  #bg-gradient {
+    display: block; }
+  #bg-gradient-mobile {
+    display: none; }
+  .submit-city-form {
+    text-align: left; }
+  .output .suggestion {
+    margin: 0; }
+    .output .suggestion__jacket {
+      font-size: 170px;
+      line-height: 157px;
+      letter-spacing: -8px; }
+    .output .suggestion__forecast {
+      font-size: 45px; }
+  .temp-card,
+  .tweet-link {
+    display: block; }
+  .temp-box {
+    font-size: 90px; }
+  .temp-card-mobile,
+  .tweet-link-mobile {
+    display: none; } }
+
+@media (min-width: 480px) and (max-width: 780px) {
+  .output .suggestion {
+    margin: 0; }
+    .output .suggestion__jacket {
+      font-size: 170px;
+      line-height: 157px;
+      letter-spacing: -8px; }
+    .output .suggestion__forecast {
+      font-size: 45px; }
+  .temp-card,
+  .tweet-link {
+    display: block; }
+  .temp-card-mobile,
+  .tweet-link-mobile {
+    display: none; } }
+
+@media screen and (max-width: 480px) {
+  .title-section {
+    font-size: 45px; }
+  #bg-gradient {
+    display: none; }
+  #bg-gradient-mobile {
+    display: block; }
+  .submit-city-form,
+  .input-text-holder {
+    text-align: center; }
+  .output {
+    width: 93%; }
+    .output .suggestion {
+      top: 80;
+      padding: 0;
+      width: 95%; }
+      .output .suggestion__jacket {
+        font-size: 77px;
+        line-height: 68px;
+        letter-spacing: -4px; }
+      .output .suggestion__forecast {
+        font-size: 35px;
+        width: 95%; }
+  .temp-card,
+  .tweet-link {
+    display: none; }
+  .temp-box {
+    font-size: 50px; }
+  .temp-card-mobile {
+    padding: 0; }
+  .temp-card-mobile,
+  .tweet-link-mobile {
+    display: block;
+    position: absolute;
+    top: -130px; } }
+
 body {
   font-family: Arial;
   color: #FFF;
-  background-color: #000;
-  eight: 100vh;
-  overflow: hidden;
-  width: 100vw; }
+  background-color: #000; }
   body h1 {
     font-weight: 700; }
 
@@ -235,94 +312,3 @@ body {
     font-size: 36px;
     padding-right: 7px;
     vertical-align: middle; }
-
-@media screen and (min-width: 780px) {
-  .title-section {
-    font-size: 70px; }
-  .body-container {
-    height: 100vh; }
-  #bg-gradient {
-    display: block; }
-  #bg-gradient-mobile {
-    display: none; }
-  .submit-city-form {
-    text-align: left; }
-  .output .suggestion {
-    margin: 0; }
-    .output .suggestion__jacket {
-      font-size: 170px;
-      line-height: 157px;
-      letter-spacing: -8px; }
-    .output .suggestion__forecast {
-      font-size: 45px; }
-  .temp-card,
-  .tweet-link {
-    display: block; }
-  .temp-box {
-    font-size: 90px; }
-  .temp-card-mobile,
-  .tweet-link-mobile {
-    display: none; } }
-
-@media (min-width: 480px) and (max-width: 780px) {
-  .output .suggestion {
-    margin: 0; }
-    .output .suggestion__jacket {
-      font-size: 170px;
-      line-height: 157px;
-      letter-spacing: -8px; }
-    .output .suggestion__forecast {
-      font-size: 45px; }
-  .temp-card,
-  .tweet-link {
-    display: block; }
-  .temp-card-mobile,
-  .tweet-link-mobile {
-    display: none; } }
-
-@media screen and (max-width: 480px) {
-  .title-section {
-    font-size: 45px; }
-    .title-section.minified {
-      width: 100%;
-      padding: 30px 15px;
-      margin: 0; }
-  #bg-gradient {
-    display: none; }
-  #bg-gradient-mobile {
-    display: block; }
-  .submit-city-form,
-  .input-text-holder {
-    text-align: center; }
-  .output {
-    width: 93%; }
-    .output .suggestion {
-      top: 40;
-      padding: 0;
-      width: 95%; }
-      .output .suggestion__jacket {
-        font-size: 78px;
-        line-height: 69px;
-        letter-spacing: -4px; }
-      .output .suggestion__forecast {
-        font-size: 30px;
-        width: 95%; }
-  .temp-card,
-  .tweet-link {
-    display: none; }
-  .temp-box {
-    font-size: 45px;
-    width: 94%;
-    left: 3%;
-    display: none; }
-  .temp-card-mobile {
-    padding: 0; }
-  .tweet-link-mobile {
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    opacity: 0; }
-  .temp-card-mobile {
-    display: block;
-    position: absolute;
-    bottom: -130px; } }

@@ -49,79 +49,79 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh < 0:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("clouds could be slangin snow");
+                    $('.suggestion__jacket').text("You're gonna need a bigger jacket");
+                    $('.suggestion__forecast').text("and clouds could be slangin' snow");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("bit'a flurry here and there");
+                    $('.suggestion__jacket').text("You're gonna need a bigger jacket");
+                    $('.suggestion__forecast').text("with a bit'a flurry here and there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("bit'a flurry here and there");
+                    $('.suggestion__jacket').text("You're gonna need a bigger jacket,");
+                    $('.suggestion__forecast').text("a Russian novel and some whiskey");
                     break;
                 default:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("it's gonna be cold...and dark...and it's gonna last forever.");
+                    $('.suggestion__jacket').text("You're gonna need a bigger jacket.");
+                    $('.suggestion__forecast').text("It's gonna be cold and dark...and it's gonna last forever.");
             }
             break;
 
         case tempHigh<=3 && tempHigh>0:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("and it could piss down rain");
+                    $('.suggestion__jacket').text("You're gonna need the Gore-tex today");
+                    $('.suggestion__forecast').text("cause it could piss down rain");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("could sprinkle a bit");
+                    $('.suggestion__jacket').text("Just...I'm just done with winter");
+                    $('.suggestion__forecast').text("It's gonna be cold drizzle. Let's just stay inside");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    $('.suggestion__jacket').text("Go with the thick winter jacket");
+                    $('.suggestion__forecast').text("and treat yourself to a nice coffee.");
                     break;
                 default:
-                    $('.suggestion__jacket').text("You're gonna need a bigger coat.");
-                    $('.suggestion__forecast').text("it's gonna be cold and...dark.");
+                    $('.suggestion__jacket').text("You're gonna need that thick jacket...");
+                    $('.suggestion__forecast').text("again.");
             }
             break;
 
         case tempHigh <=10 && tempHigh >3:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
-                    $('.suggestion__forecast').text("and it could piss down rain");
+                    $('.suggestion__jacket').text("Go with the thicker jacket. It'll be chilly");
+                    $('.suggestion__forecast').text("and it'll piss cold rain");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
+                    $('.suggestion__jacket').text("Go with the thicker jacket. It'll be chilly");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
-                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    $('.suggestion__jacket').text("Go with some layers today. It'll be chilly");
+                    $('.suggestion__forecast').text("and the sun is gonna hide a bit");
                     break;
                 default:
-                    $('.suggestion__jacket').text("Go with the thicker coat. It'll be chilly.");
-                    $('.suggestion__forecast').text("and you could grab some shades");
+                    $('.suggestion__jacket').text("You'll be warm in a thick jacket");
+                    $('.suggestion__forecast').text("and cold in a thin jacket");
             }
             break;
 
         case tempHigh <=15 && tempHigh >10:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("You should grab a light coat");
-                    $('.suggestion__forecast').text("don't forget your snorkel");
+                    $('.suggestion__jacket').text("A rain jacket with layers");
+                    $('.suggestion__forecast').text("and don't forget your snorkel");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("You should grab a light coat");
+                    $('.suggestion__jacket').text("You should grab a light jacket");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("You should grab a light coat");
+                    $('.suggestion__jacket').text("Layers, layers, layers.");
                     $('.suggestion__forecast').text("and the sun is gonna hide");
                     break;
                 default:
-                    $('.suggestion__jacket').text("You should grab a light coat");
+                    $('.suggestion__jacket').text("Try a sweater under a lighter jacket");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
@@ -129,19 +129,19 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh <=17 && tempHigh >15:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
-                    $('.suggestion__forecast').text("and it could piss down rain");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a jacket");
+                    $('.suggestion__forecast').text("cause it could piss down rain");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
+                    $('.suggestion__jacket').text("Grab the light jacket.");
                     $('.suggestion__forecast').text("and it could tinkle here or there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
-                    $('.suggestion__forecast').text("and the sun is gonna hide");
+                    $('.suggestion__jacket').text("You might as well grab a light jacket");
+                    $('.suggestion__forecast').text("cause the clouds will block the sun");
                     break;
                 default:
-                    $('.suggestion__jacket').text("Eeehhhh....you should grab a coat");
+                    $('.suggestion__jacket').text("Eeehhhh....you should grab a light jacket");
                     $('.suggestion__forecast').text("and you could grab some shades");
             }
             break;
@@ -149,15 +149,15 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh <=20 && tempHigh >17:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("Could just grab a light coat for later");
+                    $('.suggestion__jacket').text("Could just grab a light jacket for later");
                     $('.suggestion__forecast').text("but grab an umbrella");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("Could just grab a light coat for later");
+                    $('.suggestion__jacket').text("Could just grab a light jacket for later");
                     $('.suggestion__forecast').text("but peep the possible drizzle");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("Could just grab a light coat for later");
+                    $('.suggestion__jacket').text("Could just grab a light jacket for later");
                     $('.suggestion__forecast').text("and the sun is gonna hide");
                     break;
                 default:
@@ -215,6 +215,7 @@ function tempBox(temp) {
 }
 
 function postCityName(city) {
+    // $('#city-append').text(' in aölksdj ölaskdjdlösj ');
     $('#city-append').text(' in ' + city);
     $('#tweet-url').attr('href', 'http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20in%20' + city + '%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.')
 }

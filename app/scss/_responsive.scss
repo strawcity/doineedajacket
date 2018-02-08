@@ -75,6 +75,11 @@
 @media screen and (max-width: $small-break) {
     .title-section {
         font-size: 45px;
+        &.minified {
+          width: 100%;
+          padding: 30px 15px;
+          margin: 0;
+        }
     }
     #bg-gradient {
         display: none;
@@ -89,15 +94,17 @@
     .output {
         width: 93%;
         .suggestion {
-            top: 80;
+            top: 40;
             padding: 0;
+            width: 95%;
             &__jacket {
-                font-size: 80px;
-                line-height: 75px;
+                font-size: 78px;
+                line-height: 69px;
                 letter-spacing: -4px;
             }
             &__forecast {
-                font-size: 35px;
+                font-size: 30px;
+                width: 95%;
             }
         }
     }
@@ -106,12 +113,25 @@
         display: none;
     }
     .temp-box {
-        font-size: 60px;
+        font-size: 45px;
+        width: 94%;
+        left: 3%;
+        display: none;
     }
-    .temp-card-mobile,
+    .temp-card-mobile {
+      padding: 0;
+    }
+
     .tweet-link-mobile {
         display: block;
         position: absolute;
-        top: -130px;
+        bottom: 30px;
+        opacity: 0;
+    }
+
+    .temp-card-mobile {
+        display: block;
+        position: absolute;
+        bottom: -130px;
     }
 }

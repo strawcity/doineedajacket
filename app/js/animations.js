@@ -5,14 +5,14 @@
   function pageTitleAnimation() {
       var titleSection = $('.title-section');
       $('.title-section').addClass('minified');
-      $('.loader').fadeOut();
+      $('#loading').fadeOut();
   };
 
   function suggestionJacketAnimation() {
       var titleSection = (document.querySelector('.suggestion'));
       var translateX = (document.querySelector('.body-container'));
       dynamics.animate(titleSection, {
-        translateX: 2015,
+        translateX: 2000,
       }, {
           type: dynamics.spring,
           duration: 1000,
@@ -34,13 +34,13 @@
   };
 
   function mobileTempBoxAnimation() {
-      var offsetHeight =  $('#bg-gradient-mobile').height() + $('.temp-card').height()  + $('.tweet-link-mobile').height() + 60;
+      var offsetHeight = 367 + (-Math.abs($('#bg-gradient-mobile').height()));
       var mobileTempBox = (document.querySelector('.temp-card-mobile'));
 
-      $('#bg-gradient-mobile').css("height", offsetHeight);
+      $('.temp-box').show().css("width", "94%");
 
       dynamics.animate(mobileTempBox, {
-        translateY: 230,
+        translateY: offsetHeight,
       }, {
           type: dynamics.spring,
           duration: 1250,
@@ -64,10 +64,10 @@
   function mobileTweetLinkAnimation() {
       var mobileTweetLink = (document.querySelector('.tweet-link-mobile'));
       dynamics.animate(mobileTweetLink, {
-        opacity: 1,
+        opacity: 0.7,
       }, {
           type: dynamics.spring,
-          duration: 1250,
+          duration: 2250,
           frequency: 23,
           friction: 207
       })

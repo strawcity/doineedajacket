@@ -7,7 +7,7 @@ var cssnano = require('gulp-cssnano');
 var useref = require('gulp-useref');
 var del = require('del');
 
-gulp.task('watch', ['browserSync', 'sass'], function(){
+gulp.task('default', ['browserSync', 'sass'], function(){
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/*.js', browserSync.reload);
