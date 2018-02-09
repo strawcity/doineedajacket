@@ -75,7 +75,7 @@
 
 @media screen and (max-width: $small-break) {
     .title-section {
-      padding: 30px;
+      padding: 15px;
       font-size: 45px;
         &.minified {
           width: 100%;
@@ -131,7 +131,7 @@
             width: 95%;
             &__jacket {
                 font-size: 75px;
-                line-height: 69px;
+                line-height: 60px;
                 letter-spacing: -4px;
             }
             &__forecast {

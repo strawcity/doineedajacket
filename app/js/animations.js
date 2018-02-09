@@ -35,7 +35,7 @@
   };
 
   function mobileTempBoxAnimation() {
-      var offsetHeight = 367 + (-Math.abs($('#bg-gradient-mobile').height()));
+      var offsetHeight = 450 + (-Math.abs($('#bg-gradient-mobile').height()));
       var mobileTempBox = (document.querySelector('.temp-card-mobile'));
 
       $('.temp-box').show().css("width", "94%");

@@ -40,11 +40,12 @@ function submitCity() {
     event.preventDefault();
 }
 
-function thisIsWhat(tempHigh, windRange, forecasts){
+function thisIsWhat(tempHigh, windRange, forecasts, tempUnits){
     var drizzle,
         cloudy,
         rain,
         hour;
+
 
     if (forecasts.includes("rain") && !forecasts.includes("light")) {
         rain = true;
@@ -60,15 +61,15 @@ function thisIsWhat(tempHigh, windRange, forecasts){
         case tempHigh < 0:
             switch (true) {
                 case rain:
-                    $('.suggestion__jacket').text("You're gonna need a bigger jacket");
+                    $('.suggestion__jacket').text("Layer your two tickest coats");
                     $('.suggestion__forecast').text("and clouds could be slangin' snow");
                     break;
                 case drizzle:
-                    $('.suggestion__jacket').text("You're gonna need a bigger jacket");
+                    $('.suggestion__jacket').text("You're gonna need a biiiig jacket");
                     $('.suggestion__forecast').text("with a bit'a flurry here and there");
                     break;
                 case cloudy:
-                    $('.suggestion__jacket').text("You're gonna need a bigger jacket,");
+                    $('.suggestion__jacket').text("You're gonna need a biiiig jacket,");
                     $('.suggestion__forecast').text("a Russian novel and some whiskey");
                     break;
                 default:
@@ -214,15 +215,23 @@ function thisIsWhat(tempHigh, windRange, forecasts){
             break;
     }
 
-    tempBox(tempHigh);
+    tempBox(tempHigh, tempUnits);
     animateElements();
 }
 // Deduct 32, then multiply by 5, then divide by 9
-function tempBox(temp) {
-    $('#temp-f-number').text(Math.round(temp * 9/5 + 32));
-    $('#temp-c-number').text(Math.round(temp));
-    $('#mobile-temp-f-number').text(Math.round(temp * 9/5 + 32));
-    $('#mobile-temp-c-number').text(Math.round(temp));
+function tempBox(temp, tempUnits) {
+    console.log(tempUnits.includes('America'));
+    if (tempUnits.includes('America')) {
+      $('#temp-card-front').empty().text(Math.round(temp * 9/5 + 32) + '° F');
+      $('#temp-card-back').empty().text(Math.round(temp) + '° C');
+      $('#mobile-temp-card-front').empty().text(Math.round(temp * 9/5 + 32) + '° F');
+      $('#mobile-temp-card-back').empty().text(Math.round(temp) + '° C');
+    } else {
+      $('#temp-card-front').empty().text(Math.round(temp) + '° C');
+      $('#temp-card-back').empty().text(Math.round(temp * 9/5 + 32) + '° F');
+      $('#mobile-temp-card-front').empty().text(Math.round(temp) + '° C');
+      $('#mobile-temp-card-back').empty().text(Math.round(temp * 9/5 + 32) + '° F');
+    }
 }
 
 function postCityName(city) {
@@ -274,6 +283,7 @@ function getWeatherLatLon(lat, lon) {
         locationAPI = "https://api.darksky.net/forecast/" + key + "/" + lat + "," + lon,
         tempHigh,
         forecasts,
+        tempUnits,
         windRange;
     $.ajax({
        type: "GET",
@@ -285,8 +295,9 @@ function getWeatherLatLon(lat, lon) {
            tempHigh = (data.daily.data[0].temperatureMax - 32) * 5/9;
            windRange = data.daily.data[0].windSpeed;
            forecasts = data.daily.data[0].summary;
+           tempUnits = data.timezone;
            getAddress(lat, lon);
-           thisIsWhat(tempHigh, windRange, forecasts);
+           thisIsWhat(tempHigh, windRange, forecasts, tempUnits);
         }
     });
 }
