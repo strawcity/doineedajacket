@@ -35,7 +35,10 @@
   };
 
   function mobileTempBoxAnimation() {
-      var offsetHeight = 323 + (-Math.abs($('#bg-gradient-mobile').height()));
+      var bgHeight = $('#bg-gradient-mobile').height();
+      var jacketTitle = $('.suggestion__jacket').height();
+      var forecastTitle = $('.suggestion__forecast').height();
+      var offsetHeight = jacketTitle + forecastTitle + 100 + (-Math.abs(bgHeight));
       var mobileTempBox = (document.querySelector('.temp-card-mobile'));
 
       $('.temp-box').show().css("width", "94%");
