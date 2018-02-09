@@ -2,8 +2,18 @@
 body {
   font-family: Arial;
   color: #FFF;
-  background-color: #000;
-  eight: 100vh;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e2e41+0,0e1129+100 */
+  background: #1e2e41;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1e2e41 0%, #0e1129 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1e2e41 0%, #0e1129 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1e2e41 0%, #0e1129 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2e41', endColorstr='#0e1129',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  height: 100vh;
   overflow: hidden;
   width: 100vw; }
   body h1 {
@@ -19,12 +29,16 @@ body {
   right: 0px;
   z-index: -200;
   background: #1e2e41;
-  background: -moz-linear-gradient(65deg, #1e2e41 0%, #0e0883 100%);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, #1e2e41), color-stop(100%, #0e0883));
-  background: -webkit-linear-gradient(65deg, #1e2e41 0%, #0e0883 100%);
-  background: -o-linear-gradient(65deg, #1e2e41 0%, #0e0883 100%);
-  background: -ms-linear-gradient(65deg, #1e2e41 0%, #0e0883 100%);
-  background: linear-gradient(65deg, #1e2e41 0%, #0e0883 100%); }
+  background: #1e2e41;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #1e2e41 0%, #0e0883 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #1e2e41 0%, #0e0883 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #1e2e41 0%, #0e0883 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2e41', endColorstr='#0e0883',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
 
 .row {
   margin: 0; }
@@ -185,7 +199,7 @@ body {
     position: absolute;
     z-index: -100; }
     .output .suggestion__jacket {
-      font-family: BalboaPlus-Fill;
+      font-family: "butlerbold";
       text-align: left; }
     .output .suggestion__forecast {
       width: 100%;

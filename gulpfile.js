@@ -22,12 +22,21 @@ gulp.task('sass', function(){
     }))
 })
 
-gulp.task('uglify', function(){
+gulp.task('uglify-css', function(){
   return gulp.src('app/css/**/*.css')
     .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+})
+
+gulp.task('uglify-js', function(){
+  return gulp.src('app/js/**/*.js')
+    .pipe(useref())
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.reload({
       stream: true
     }))

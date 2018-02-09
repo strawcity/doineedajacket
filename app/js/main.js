@@ -227,7 +227,7 @@ function tempBox(temp) {
 
 function postCityName(city) {
     $('#city-append').text(' in ' + city);
-    $('#tweet-url').attr('href', 'http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20in%20' + city + '%20today.%20www.doIneedajacket.strawcity.com%20told%20me%20so.')
+    $('#tweet-url').attr('href', 'http://twitter.com/home?status=I%20needed%20a%20fucking%20jacket%20in%20' + city + '%20today.%20https://doineedafuckingjacket.com%20told%20me%20so.')
 }
 
 function animateElements(){
